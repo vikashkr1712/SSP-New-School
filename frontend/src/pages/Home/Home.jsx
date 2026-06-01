@@ -96,7 +96,12 @@ function Home() {
     <span>📞 +91 98765 43210</span>
   </div>
 
-  <div className="hero-content">
+  <div className="hero-content hero-banner"
+  style={{
+    backgroundImage: `url(${schoolBuilding})`
+  }}
+>
+  <div className="hero-overlay">
 
     <div className="hero-left">
 
@@ -116,7 +121,6 @@ function Home() {
       </p>
 
       <div className="hero-buttons">
-
         <a href="/about" className="btn-primary">
           Discover More
         </a>
@@ -124,47 +128,46 @@ function Home() {
         <a href="/admission" className="btn-outline">
           Admissions Open 2026
         </a>
-
       </div>
 
     </div>
 
-   <div className="hero-right">
-
-  <img
-    src={schoolBuilding}
-    alt="SSP School Campus"
-  />
-
-</div>
-
   </div>
+</div>
 
 </section>
 <section className="feature-strip">
 
-  <div className="feature-card">
+  <div className="feature-item">
     <span>🎓</span>
-    <h3>Academic Excellence</h3>
-    <p>Strong curriculum and result-oriented learning.</p>
+    <div>
+      <h3>Academic Excellence</h3>
+      <p>Strong curriculum and result-oriented learning.</p>
+    </div>
   </div>
 
-  <div className="feature-card">
+  <div className="feature-item">
     <span>👨‍🏫</span>
-    <h3>Expert Faculty</h3>
-    <p>Dedicated and experienced teaching staff.</p>
+    <div>
+      <h3>Expert Faculty</h3>
+      <p>Dedicated and experienced teaching staff.</p>
+    </div>
   </div>
 
-  <div className="feature-card">
+  <div className="feature-item">
     <span>🏫</span>
-    <h3>Modern Campus</h3>
-    <p>Smart classrooms and advanced facilities.</p>
+    <div>
+      <h3>Modern Facilities</h3>
+      <p>Smart classrooms and advanced facilities.</p>
+    </div>
   </div>
 
-  <div className="feature-card">
-    <span>⚽</span>
-    <h3>Holistic Growth</h3>
-    <p>Sports, arts and leadership development.</p>
+  <div className="feature-item">
+    <span>🌱</span>
+    <div>
+      <h3>Holistic Growth</h3>
+      <p>Sports, arts and leadership development.</p>
+    </div>
   </div>
 
 </section>
