@@ -8,6 +8,7 @@
 
 .home-hero {
   display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: clamp(1.5rem, 3vw, 3rem);
   align-items: center;
   padding-block: clamp(4rem, 8vw, 8rem);
@@ -121,16 +122,16 @@
 
 .home-hero__visual {
   /* center visual area and expand width to use prior side-image space */
-  min-height: 36rem;
-  display: grid;
-  place-items: center;
-  justify-items: center;
+   min-height: auto;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 64rem;
   margin-inline: auto;
-  border-radius: 1rem;
+
+  border-radius: 2rem;
   overflow: hidden;
-  position: relative;
+  padding: 0; 
+  background: none;  
 }
 
 .home-hero__visual::after {
@@ -198,10 +199,11 @@
 
 .home-image-placeholder--hero {
   /* make hero image fill the visual area and provide balanced spacing */
-  min-height: 28rem;
+  min-height: 18rem;
   width: 100%;
-  max-width: 100%;
+  max-width: 34rem;
   margin: 0 auto;
+  border-radius: 2rem 2rem 0 0;
 }
 
 .home-image-placeholder--tall {
@@ -225,7 +227,7 @@
   /* place the stat strip below the visual and align to the visual width */
   position: relative;
   margin: 1rem auto 0;
-  width: min(100%, 56rem);
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
@@ -235,25 +237,32 @@
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   color: #ffffff;
   box-shadow: var(--shadow-lg);
+  position: relative;
+  margin-top: .25rem;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  border-radius: 0 0 2rem 2rem;
+
 }
 
 .home-stat-strip__item {
-  padding: 0.75rem 0.9rem;
-  border-radius: 1rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.8rem;
   background: rgba(255, 255, 255, 0.04);
 }
 
 .home-stat-strip__item strong {
   display: block;
   /* slightly reduce the large stat number and increase the supporting text */
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--color-accent);
 }
 .home-stat-strip__item span {
   display: block;
   margin-top: 0.45rem;
   color: rgba(255, 255, 255, 0.94);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   line-height: 1.45;
 }
 
@@ -638,6 +647,10 @@
 .home-promo__panel .home-button,
 .home-intro .home-button {
   margin-top: 2.4rem;
+  width: fit-content;
+  min-width: 180px;
+  padding: 0.8rem 1.8rem;
+  display: inline-flex;
 }
 
 .home-promo__panel img {
@@ -882,11 +895,14 @@
 
 .home-cta__content .home-button {
   margin-top: 0.75rem;
-  background: #ffffff; /* white pill button */
+  background: #ffffff;
   color: var(--color-primary-dark);
-  box-shadow: 0 10px 30px rgba(9,28,56,0.08);
   border-radius: 999px;
-  padding: 0.9rem 2.25rem;
+
+  padding: 0.7rem 1.8rem;
+  width: fit-content;
+  min-width: 220px;
+  font-size: 1rem;
 }
 
 .home-cta__content .home-button:hover {
@@ -918,7 +934,7 @@
   }
 
   .home-hero__visual {
-    min-height: 40rem;
+    min-height: auto;
   }
 }
 
@@ -1043,11 +1059,13 @@
   .home-image-placeholder--hero {
     min-height: 17rem;
     max-width: 100%;
+    
   }
 
   .home-floating-card {
     width: calc(100% - 1rem);
     padding: 0.9rem 1rem;
+    
   }
 
   .home-stat-strip {
@@ -1133,7 +1151,7 @@
   }
 
   .home-hero__visual {
-    min-height: 40rem;
+    min-height: auto;
   }
 }
 
