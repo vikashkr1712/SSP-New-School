@@ -1,36 +1,43 @@
 import { Link } from "react-router-dom";
 import "../../styles/layout/Home.css";
 
-const heroImage = "/images/jaipuria-hero.jpg";
-const campusLifeImage = "/images/jaipuria-campus-1.jpg";
-const studentLifeImage = "/images/jaipuria-feature.jpg";
-const admissionVisual = "/images/jaipuria-event.jpg";
-const principalImage = "/images/jaipuria-campus-1.jpg";
-const promoImageOne = campusLifeImage;
-const promoImageTwo = studentLifeImage;
-const eventVisual = admissionVisual;
+import schoolBuilding from "../../assets/images/SSP School.png";
+import studentsImg from "../../assets/images/school student.jpg";
+import activityImg from "../../assets/images/school activity.jpg";
+import classroomImg from "../../assets/images/classroom_img.jpg";
+
+const heroImage = schoolBuilding;
+const campusLifeImage = activityImg;
+const studentLifeImage = studentsImg;
+const admissionVisual = classroomImg;
+
+const promoImageOne = activityImg;
+const promoImageTwo = studentsImg;
+const eventVisual = classroomImg;
+const principalImage = schoolBuilding;
+
 
 const academicHighlights = [
   {
-    title: "Strong Curriculum",
-    description: "Balanced academics designed to build confidence, curiosity, and long-term success.",
-    stat: "98%",
-    label: "Student satisfaction",
-    image: "/images/class-xii-achievers-2026.png",
+    title: "Academic Excellence",
+    description: "Providing quality education with modern learning methods.",
+    stat: "5000+",
+    label: "Students",
+    image: studentsImg,
   },
   {
-    title: "Experienced Teachers",
-    description: "Dedicated mentors who support every learner with care, structure, and attention.",
-    stat: "40+",
-    label: "Expert faculty",
-    image: "/images/Deepak-Kumar-Bajaj-1.jpg",
+    title: "Experienced Faculty",
+    description: "Dedicated teachers focused on student success.",
+    stat: "100+",
+    label: "Faculty Members",
+    image: classroomImg,
   },
   {
-    title: "Holistic Growth",
-    description: "Sports, arts, and leadership opportunities that encourage all-round development.",
+    title: "Campus Facilities",
+    description: "Smart classrooms, labs and sports infrastructure.",
     stat: "25+",
-    label: "Clubs & activities",
-    image: "/images/Pinnacle-3.jpg",
+    label: "Facilities",
+    image: schoolBuilding,
   },
 ];
 
@@ -45,86 +52,118 @@ const featureCards = [
   {
     title: "Life Skills for Kids",
     description: "Learning is designed to build responsibility, confidence, and practical habits.",
-    image: campusLifeImage,
+    image: studentsImg,
   },
   {
-    title: "Grow Your Own Wings",
-    description: "We support every learner with mentoring, encouragement, and structure.",
-    image: admissionVisual,
+    title: "Campus Activities",
+    description: "Sports, cultural events and personality development programs.",
+    image: activityImg,
   },
 ];
 
 const learningBlocks = [
   {
-    title: "Letter Identification",
-    grade: "Class - Pre School",
-    image: "/images/integral.png",
+    title: "Smart Classrooms",
+    grade: "Technology Enabled Learning",
+    image: classroomImg,
   },
   {
-    title: "General Knowledge",
-    grade: "Fourth Grade",
-    image: "/images/value-based-2.png",
+    title: "Student Development",
+    grade: "Personality & Leadership",
+    image: studentsImg,
   },
   {
-    title: "Geography Quiz",
-    grade: "First Grade",
-    image: "/images/Skill-centric-icon.png",
+    title: "School Activities",
+    grade: "Sports & Cultural Events",
+    image: activityImg,
   },
   {
-    title: "Visual Arts Training",
-    grade: "Sketching class",
-    image: "/images/teacher-upskill-icon.png",
+    title: "Academic Excellence",
+    grade: "Strong Foundation",
+    image: schoolBuilding,
   },
 ];
+
 
 function Home() {
   return (
     <main className="home-page">
-      <section className="home-hero section-shell">
-        <div className="home-hero__content">
-          <span className="home-eyebrow">Welcome to SSP School</span>
-          <h1>Putting your child’s future in great motion.</h1>
-          <p>
-            SSP School combines modern teaching, a caring environment, and strong academic
-            foundations to help every student succeed with confidence.
-          </p>
+      <section className="hero-modern">
 
-          <div className="home-hero__actions">
-            <Link className="home-button home-button--primary" to="/admission">
-              Start Learning
-            </Link>
-            <Link className="home-button home-button--secondary" to="/about">
-              Learn More
-            </Link>
-          </div>
-        </div>
+  <div className="top-bar">
+    <span>📍 Varanasi, India</span>
+    <span>✉ info@sspschool.edu.in</span>
+    <span>📞 +91 XXXXX XXXXX</span>
+  </div>
 
-        <div className="home-hero__visual" aria-hidden="true">
-          <div className="home-image-placeholder home-image-placeholder--hero">
-            <img className="home-image-placeholder__img" src={heroImage} alt="SSP School campus illustration" />
-          </div>
+  <div className="hero-content">
 
-          <div className="home-floating-card">
-            <strong>Admissions Open</strong>
-            <span>Join our learning community today</span>
-          </div>
+    <div className="hero-left">
 
-          <div className="home-stat-strip">
-            <article className="home-stat-strip__item">
-              <strong>50+</strong>
-              <span>Schools are supported across 29 states</span>
-            </article>
-            <article className="home-stat-strip__item">
-              <strong>12K+</strong>
-              <span>Helping the students of all ages thrive</span>
-            </article>
-            <article className="home-stat-strip__item">
-              <strong>70+</strong>
-              <span>Available field workspaces and activities</span>
-            </article>
-          </div>
-        </div>
-      </section>
+      <span className="hero-tag">
+        SSP School
+      </span>
+
+      <h1>
+        Inspiring Excellence,
+        <br />
+        Shaping Tomorrow
+      </h1>
+
+      <p>
+        A place where learning goes beyond classrooms
+        and every student discovers their potential.
+      </p>
+
+      <div className="hero-buttons">
+
+        <a href="/about" className="btn-primary">
+          Discover More
+        </a>
+
+        <a href="/admission" className="btn-outline">
+          Admissions Open 2026
+        </a>
+
+      </div>
+
+    </div>
+
+   <div className="hero-right">
+
+  <img
+    src={schoolBuilding}
+    alt="SSP School Campus"
+  />
+
+</div>
+
+  </div>
+
+</section>
+<section className="feature-strip">
+
+  <div className="feature-card">
+    <h3>Academic Excellence</h3>
+    <p>Comprehensive curriculum and student success.</p>
+  </div>
+
+  <div className="feature-card">
+    <h3>Experienced Faculty</h3>
+    <p>Qualified teachers guiding every learner.</p>
+  </div>
+
+  <div className="feature-card">
+    <h3>Modern Facilities</h3>
+    <p>Labs, sports and digital classrooms.</p>
+  </div>
+
+  <div className="feature-card">
+    <h3>Holistic Growth</h3>
+    <p>Academics, arts and sports together.</p>
+  </div>
+
+</section>
 
       <section className="home-intro section-shell">
         <div className="home-intro__grid">
