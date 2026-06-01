@@ -93,7 +93,7 @@ function Home() {
   <div className="top-bar">
     <span>📍 Varanasi, India</span>
     <span>✉ info@sspschool.edu.in</span>
-    <span>📞 +91 XXXXX XXXXX</span>
+    <span>📞 +91 98765 43210</span>
   </div>
 
   <div className="hero-content">
@@ -144,23 +144,27 @@ function Home() {
 <section className="feature-strip">
 
   <div className="feature-card">
+    <span>🎓</span>
     <h3>Academic Excellence</h3>
-    <p>Comprehensive curriculum and student success.</p>
+    <p>Strong curriculum and result-oriented learning.</p>
   </div>
 
   <div className="feature-card">
-    <h3>Experienced Faculty</h3>
-    <p>Qualified teachers guiding every learner.</p>
+    <span>👨‍🏫</span>
+    <h3>Expert Faculty</h3>
+    <p>Dedicated and experienced teaching staff.</p>
   </div>
 
   <div className="feature-card">
-    <h3>Modern Facilities</h3>
-    <p>Labs, sports and digital classrooms.</p>
+    <span>🏫</span>
+    <h3>Modern Campus</h3>
+    <p>Smart classrooms and advanced facilities.</p>
   </div>
 
   <div className="feature-card">
+    <span>⚽</span>
     <h3>Holistic Growth</h3>
-    <p>Academics, arts and sports together.</p>
+    <p>Sports, arts and leadership development.</p>
   </div>
 
 </section>
@@ -170,13 +174,17 @@ function Home() {
           <div className="home-intro__copy">
             <div className="home-section-heading">
               <span>School Introduction</span>
-              <h2>Smart and clever kids ready to fly high.</h2>
+              <h2>
+  Building Future Leaders Through
+  Quality Education.
+</h2>
             </div>
             <p>
-              We create an environment where students feel valued and motivated. From early years
-              learning to guided development, our programs are built to support growth at every
-              stage.
-            </p>
+  SSP School provides a nurturing environment where
+  students develop academically, socially, and personally.
+  Our goal is to inspire curiosity, creativity, and confidence
+  in every learner.
+</p>
             <p>
               Modern classrooms, skilled teachers, and thoughtful student support help us deliver
               an experience that goes beyond textbooks.
@@ -186,202 +194,215 @@ function Home() {
             </Link>
           </div>
 
-          <div className="home-intro__feature-grid">
-            {featureCards.map((item) => (
-              <article className="home-feature-card" key={item.title}>
-                <div className="home-feature-card__image">
-                  <img src={item.image} alt={item.title} />
-                </div>
-                <div className="home-feature-card__text">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <div className="home-intro__image">
+  <img src={studentsImg} alt="SSP School Students" />
+</div>
         </div>
       </section>
 
-      <section className="home-highlights section-shell">
-        <div className="home-section-heading">
-          <span>Learning Focus</span>
-          <h2>Shaping the future of kids with joyful, structured learning.</h2>
-        </div>
+     <section className="home-highlights section-shell">
 
-        <div className="home-learning-grid">
-          {learningBlocks.map((item) => (
-            <article className="home-learning-card" key={item.title}>
-              <div className="home-learning-card__art">
-                <img src={item.image} alt={item.title} />
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.grade}</p>
-            </article>
-          ))}
-        </div>
+  <div className="home-section-heading">
+    <span>Academic Programs</span>
+    <h2>Preparing Students for Academic Excellence</h2>
+  </div>
 
-        <div className="home-card-grid home-card-grid--stats">
-          {academicHighlights.map((item) => (
-            <article className="home-card" key={item.title}>
-              <div className="home-card__image">
-                <img src={item.image} alt={item.title} />
-              </div>
-              <div className="home-card__stat">
-                <strong>{item.stat}</strong>
-                <span>{item.label}</span>
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+  <div className="program-grid">
 
-      <section className="home-choose section-shell">
-        <div className="home-section-heading">
-          <span>Why Choose Our School</span>
-          <h2>We combine care, quality, and opportunity in one place.</h2>
-        </div>
+    <article className="program-card">
+      <img src={classroomImg} alt="Primary School" />
+      <h3>Primary Education</h3>
+      <p>
+        Strong foundations in literacy, numeracy and creativity.
+      </p>
+    </article>
 
-        <div className="home-choose__grid">
-          <div className="home-choose__image-grid">
-              <p className="home-choose__intro home-choose__intro--left">
-                We focus on an impactful lesson at a time, making sure children feel encouraged and
-                supported.
-              </p>
-              <article className="home-choose__image-card home-choose__image-card--gold">
-              <img src={promoImageOne} alt="Learning activities at SSP School" />
-              <div>
-                <h3>Life Skills for Kids</h3>
-                <p>Everyday habits, confidence, and values.</p>
-              </div>
-            </article>
-            <article className="home-choose__image-card home-choose__image-card--green">
-              <img src={promoImageTwo} alt="Students exploring ideas at SSP School" />
-              <div>
-                <h3>Imagination is Power</h3>
-                <p>Creative thinking and expression.</p>
-              </div>
-            </article>
-            <article className="home-choose__image-card home-choose__image-card--blue">
-              <img src={eventVisual} alt="SSP School student growth illustration" />
-              <div>
-                <h3>Grow Your Own Wings</h3>
-                <p>Support for academic and personal growth.</p>
-              </div>
-            </article>
-            <article className="home-choose__image-card home-choose__image-card--teal">
-              <img src={studentLifeImage} alt="Children learning and playing at SSP School" />
-              <div>
-                <h3>Discover & Play</h3>
-                <p>Hands-on activities that spark curiosity and teamwork.</p>
-              </div>
-            </article>
-          </div>
+    <article className="program-card">
+      <img src={studentsImg} alt="Middle School" />
+      <h3>Middle School</h3>
+      <p>
+        Developing critical thinking and problem-solving skills.
+      </p>
+    </article>
 
-          <div className="home-choose__content">
-            <p className="home-choose__intro">
-              We focus on an impactful lesson at a time, making sure children feel encouraged and
-              supported.
-            </p>
+    <article className="program-card">
+      <img src={activityImg} alt="Senior School" />
+      <h3>Senior Secondary</h3>
+      <p>
+        Preparing students for higher education and careers.
+      </p>
+    </article>
 
-            <div className="home-choose__list">
-              {chooseItems.map((item) => (
-                <div className="home-choose__item" key={item}>
-                  <span className="home-choose__bullet" aria-hidden="true" />
-                  <p>{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+  </div>
 
-      <section className="home-promo section-shell">
-        <article className="home-promo__panel home-promo__panel--gold">
-          <div>
-            <span className="home-eyebrow">Confidence Building</span>
-            <h2>Confidence that builds a brighter future.</h2>
-            <p>
-              Empowering kids with confidence to create a successful future through guided
-              learning and strong support.
-            </p>
-            <Link className="home-button home-button--secondary" to="/admission">
-              Enroll Now
-            </Link>
-          </div>
-          <img src={principalImage} alt="Principal leading SSP School" />
-        </article>
+</section>
+<section className="school-stats">
 
-        <article className="home-promo__panel home-promo__panel--warm">
-          <div>
-            <span className="home-eyebrow">Helping Kids</span>
-            <h2>Helping kids to shoot their dreams.</h2>
-            <p>Inspiring kids to aim higher with care, structure, and modern learning support.</p>
-            <Link className="home-button home-button--primary" to="/about">
-              Learn More
-            </Link>
-          </div>
-          <img src={promoImageOne} alt="Admission support at SSP School" />
-        </article>
-      </section>
+  <div className="stat-box">
+    <h2>5000+</h2>
+    <p>Students</p>
+  </div>
 
-      <section className="home-admission-band section-shell">
-        <div className="home-admission-band__copy">
-          <span className="home-eyebrow">Admission is ongoing</span>
-          <h2>Empower your kids to think smarter and sharper.</h2>
-          <p>
-            Encourage kids to think critically, be creative, and solve problems for a better
-            future.
-          </p>
-          <Link className="home-button home-button--primary" to="/admission">
-            Get Educated
-          </Link>
-        </div>
+  <div className="stat-box">
+    <h2>100+</h2>
+    <p>Faculty Members</p>
+  </div>
 
-        <div className="home-admission-band__visual">
-          <img src={admissionVisual} alt="Student admission support" />
-          <div className="home-admission-band__chip-grid">
-            <article>
-              <strong>45M+</strong>
-              <span>Kids watched around the globe</span>
-            </article>
-            <article>
-              <strong>164+</strong>
-              <span>National participating in the Olympiad</span>
-            </article>
-          </div>
-        </div>
-      </section>
+  <div className="stat-box">
+    <h2>25+</h2>
+    <p>Years of Excellence</p>
+  </div>
 
-      <section className="home-event section-shell">
-        <div className="home-event__visual">
-          <img src={eventVisual} alt="Classroom event at SSP School" />
-        </div>
-        <div className="home-event__content">
-          <span className="home-eyebrow">Upcoming Event</span>
-          <h2>Building children one at a time.</h2>
-          <p>
-            Classes and activities rooted in knowledge, values, and meaningful support for every
-            learner.
-          </p>
-          <div className="home-event__meta">07 March 2026</div>
-        </div>
-      </section>
+  <div className="stat-box">
+    <h2>95%</h2>
+    <p>Board Results</p>
+  </div>
 
-      <section className="home-cta section-shell">
-        <div className="home-cta__content">
-          <span className="home-eyebrow">Call to Action</span>
-          <h2>Ready to begin your child’s journey with us?</h2>
-          <p>
-            Explore our admission process and connect with our team to learn how we can help your
-            child thrive.
-          </p>
-          <Link className="home-button home-button--primary" to="/contact">
-            Contact Us
-          </Link>
-        </div>
-      </section>
+</section>
+<section className="campus-life section-shell">
+
+  <div className="home-section-heading">
+    <span>Campus Life</span>
+    <h2>Beyond Academics</h2>
+    <p>
+      Students participate in sports, cultural events,
+      leadership activities and community programs.
+    </p>
+  </div>
+
+  <div className="campus-grid">
+
+    <div className="campus-card">
+      <img src={activityImg} alt="School Activities" />
+      <h3>Cultural Activities</h3>
+    </div>
+
+    <div className="campus-card">
+      <img src={studentsImg} alt="Students" />
+      <h3>Student Development</h3>
+    </div>
+
+    <div className="campus-card">
+      <img src={classroomImg} alt="Classroom" />
+      <h3>Smart Learning</h3>
+    </div>
+
+  </div>
+
+</section>
+
+     <section className="why-ssp section-shell">
+
+  <div className="why-ssp-left">
+    <img src={schoolBuilding} alt="SSP School Campus" />
+  </div>
+
+  <div className="why-ssp-right">
+
+    <span className="home-eyebrow">
+      Why SSP School
+    </span>
+
+    <h2>
+      A Trusted Place For Learning,
+      Growth And Success
+    </h2>
+
+    <div className="why-item">
+      ✅ Experienced & Dedicated Faculty
+    </div>
+
+    <div className="why-item">
+      ✅ Smart Classrooms & Modern Infrastructure
+    </div>
+
+    <div className="why-item">
+      ✅ Sports, Arts & Co-Curricular Activities
+    </div>
+
+    <div className="why-item">
+      ✅ Safe & Student Friendly Environment
+    </div>
+
+    <div className="why-item">
+      ✅ Academic Excellence & Leadership Development
+    </div>
+
+  </div>
+
+</section>
+
+     <section className="principal-message section-shell">
+
+  <div className="principal-left">
+    <img src={schoolBuilding} alt="Principal Message" />
+  </div>
+
+  <div className="principal-right">
+
+    <span className="home-eyebrow">
+      Principal's Message
+    </span>
+
+    <h2>
+      Welcome To SSP School
+    </h2>
+
+    <p>
+      At SSP School, we believe every child has unique potential.
+      Our mission is to provide a nurturing environment where
+      students grow academically, socially and morally.
+    </p>
+
+    <p>
+      Through quality education, modern infrastructure and
+      dedicated faculty, we prepare students for future success.
+    </p>
+
+    <h4>Principal</h4>
+
+  </div>
+
+</section>
+
+      <section className="news-section section-shell">
+
+  <div className="home-section-heading">
+    <span>Latest News & Events</span>
+    <h2>What's Happening At SSP School</h2>
+  </div>
+
+  <div className="news-grid">
+
+    <article className="news-card">
+      <img src={activityImg} alt="Annual Function" />
+      <h3>Annual Cultural Fest 2026</h3>
+      <p>
+        Students showcased their talents through dance,
+        music and drama performances.
+      </p>
+    </article>
+
+    <article className="news-card">
+      <img src={studentsImg} alt="Sports Day" />
+      <h3>Sports Day Celebration</h3>
+      <p>
+        Encouraging teamwork, discipline and healthy competition.
+      </p>
+    </article>
+
+    <article className="news-card">
+      <img src={classroomImg} alt="Smart Learning" />
+      <h3>Smart Classroom Initiative</h3>
+      <p>
+        Technology integrated learning for better student outcomes.
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
     </main>
   );
 }
