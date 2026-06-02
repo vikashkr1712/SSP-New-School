@@ -2,7 +2,7 @@ import { useState } from "react";
 import { submitAdmissionInquiry } from "../../services/api";
 import "../../styles/layout/Admission.css";
 
-const admissionVisual = "/images/jaipuria-event.jpg";
+const admissionVisual = "/images/SSP School.png";
 
 const faqItems = [
   {
@@ -114,22 +114,72 @@ function Admission() {
 
   return (
     <main className="admission-page">
-      <section className="admission-hero">
-        <div className="section-shell admission-hero-grid">
-          <div className="hero-copy">
-            <span className="section-label">ADMISSIONS</span>
-            <h1>Admissions Open<br />2026-27</h1>
-            <p>Join S.S.P School and give your child the perfect environment to learn, grow, and succeed.</p>
-            <div className="hero-actions">
-              <button type="button" className="btn btn-primary">Enquire Now</button>
-              <button type="button" className="btn btn-outline">Download Prospectus</button>
-            </div>
-          </div>
-          <div className="hero-image">
-            <img src={admissionVisual} alt="Admissions at SSP School" />
-          </div>
-        </div>
-      </section>
+     
+     <section className="admission-hero-banner">
+
+  <img
+    src={admissionVisual}
+    alt="SSP School"
+    className="admission-hero-banner-image"
+  />
+
+  <div className="admission-hero-banner-overlay"></div>
+
+  <div className="admission-hero-banner-content">
+
+    <span className="section-label">
+      ADMISSIONS
+    </span>
+
+    <h1>
+      Shape Your Child's Future
+      <br />
+      Admissions Open 2026-27
+    </h1>
+
+    <p>
+      Join SSP School for a future-focused education with experienced
+      faculty, modern facilities, academic excellence, and holistic
+      development.
+    </p>
+
+    <div className="admission-hero-banner-buttons">
+      <button className="btn btn-primary">
+        Enquire Now →
+      </button>
+
+      <button className="btn btn-outline">
+        Download Prospectus
+      </button>
+    </div>
+
+    <div className="admission-hero-banner-stats">
+
+      <div>
+        <strong>1500+</strong>
+        <span>Students</span>
+      </div>
+
+      <div>
+        <strong>50+</strong>
+        <span>Faculty</span>
+      </div>
+
+      <div>
+        <strong>98%</strong>
+        <span>Results</span>
+      </div>
+
+      <div>
+        <strong>25+</strong>
+        <span>Activities</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       <section className="admission-features section-shell">
         <div className="feature-panel">

@@ -7,7 +7,7 @@
 }
 
 .admission-hero {
-  padding: 90px 0 40px;
+  padding: 50px 0 40px;
 }
 
 .admission-hero-grid {
@@ -101,10 +101,11 @@
 }
 
 .hero-image img {
-  width: 100%;
+  width: 150%;
   height: 500px;
   object-fit: cover;
   display: block;
+ 
 }
 
 .admission-features {
@@ -617,3 +618,134 @@
     font-size: 0.95rem;
   }
 }
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stats strong {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #082A63;
+}
+
+.hero-stats span {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+  background: white;
+  padding: 14px 18px;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.12);
+
+  z-index: 2;
+}
+
+.hero-badge span {
+  display: block;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.hero-badge strong {
+  color: #082A63;
+  font-size: 1.2rem;
+}
+
+
+/* ===== NEW ADMISSION HERO ===== */
+
+.admission-hero-banner{
+  position:relative;
+  height:720px;
+  overflow:hidden;
+  border-radius:0;
+}
+
+.admission-hero-banner-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.admission-hero-banner-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(6,27,71,.82) 0%,
+    rgba(6,27,71,.62) 40%,
+    rgba(6,27,71,.15) 100%
+  );
+
+  backdrop-filter:blur(1px);
+}
+
+.admission-hero-banner-content{
+  position:absolute;
+  z-index:5;
+
+  left:8%;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  max-width:700px;
+  color:#fff;
+}
+
+.admission-hero-banner-content h1{
+  font-size:4rem;
+  line-height:1.05;
+  margin:20px 0;
+  color:#f2f3f9;
+}
+
+.admission-hero-banner-content p{
+  font-size:1.2rem;
+  line-height:1.8;
+  color:rgba(255,255,255,.9);
+  max-width:650px;
+}
+
+.admission-hero-banner-buttons{
+  display:flex;
+  gap:16px;
+  margin-top:30px;
+}
+
+.admission-hero-banner-stats{
+  display:flex;
+  gap:50px;
+  margin-top:40px;
+}
+
+.admission-hero-banner-stats strong{
+  display:block;
+  font-size:2rem;
+  color:#fff;
+}
+
+.admission-hero-banner-stats span{
+  color:rgba(255,255,255,.8);
+}
+
