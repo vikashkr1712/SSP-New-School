@@ -38,7 +38,7 @@ const contactHighlights = [
   },
 ];
 
-const contactHeroImage = "/images/jaipuria-campus-1.jpg";
+const contactHeroImage = "/images/SSP School.png";
 
 const quickInfo = [
   "Principal: Dr. Ananya Sharma",
