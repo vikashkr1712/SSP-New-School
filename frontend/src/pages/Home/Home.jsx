@@ -121,14 +121,14 @@ function Home() {
       </p>
 
       <div className="hero-buttons">
-        <a href="/about" className="btn-primary">
-          Discover More
-        </a>
+  <Link to="/about" className="btn-primary">
+    Discover More
+  </Link>
 
-        <a href="/admission" className="btn-outline">
-          Admissions Open 2026
-        </a>
-      </div>
+  <Link to="/admission" className="btn-outline">
+    Admissions Open 2026
+  </Link>
+</div>
 
     </div>
 
