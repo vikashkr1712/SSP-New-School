@@ -50,61 +50,18 @@ const quickInfo = [
 function Contact() {
   return (
     <main className="contact-page">
-      <section className="contact-hero section-shell">
-        <div className="contact-hero__content">
-          <span className="contact-eyebrow">Contact SSP School</span>
-          <h1>We’re here to answer questions about admissions, academics, and campus life.</h1>
-          <p>
-            Reach out to the school office, admissions desk, or academic team using the details
-            below. We’ve included our full contact information so parents can connect quickly.
-          </p>
-
-          <div className="contact-highlight-strip" aria-label="Quick contact summary">
-            {contactHighlights.map((item) => (
-              <article className="contact-highlight-chip" key={item.label}>
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <div className="contact-hero__card contact-card contact-card--highlight">
-          <div className="contact-hero__image-wrap">
-            <img
-              className="contact-hero__image"
-              src={contactHeroImage}
-              alt="Students enjoying campus life at SSP School"
-            />
-          </div>
-          <div className="contact-hero__card-copy snapshot">
-            <span className="contact-card__label contact-card__label--inverse">School Snapshot</span>
-            <h2>Co-educational day school focused on academics, discipline, and growth.</h2>
+      <section className="contact-hero-modern">
+        <div className="contact-hero-overlay">
+          <div className="contact-hero-content">
+            <span className="contact-eyebrow">CONTACT SSP SCHOOL</span>
+            <h1>We're Here To Help!</h1>
             <p>
-              We keep our communication lines open for admissions, transport, academics, and
-              parent support throughout the week.
+              Have questions about admissions, academics,<br />
+              transportation, or campus visits?<br />
+              <br />
+              Our team is ready to assist parents,<br />
+              students, and visitors.
             </p>
-
-            <div className="snapshot__stats">
-              <article>
-                <strong>Established</strong>
-                <span>1995</span>
-              </article>
-              <article>
-                <strong>Students</strong>
-                <span>1,500+</span>
-              </article>
-              <article>
-                <strong>Faculty</strong>
-                <span>80+</span>
-              </article>
-            </div>
-
-            <div className="snapshot__cta">
-              <a className="btn btn--primary" href="/admission">Apply / Enquire</a>
-              <a className="btn btn--ghost" href="#contact-details">Contact Us</a>
-            </div>
-            
           </div>
         </div>
       </section>
@@ -200,3 +157,4 @@ function Contact() {
 }
 
 export default Contact;
+

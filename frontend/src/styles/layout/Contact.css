@@ -709,3 +709,116 @@
     font-size: clamp(3rem, 4vw, 4.75rem);
   }
 }
+
+/* Contact Hero Modern - Full Width Hero Section */
+.contact-hero-modern {
+  min-height: 550px;
+  background-image: url("/images/jaipuria-campus-1.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.contact-hero-overlay {
+  min-height: 550px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.90) 15%,
+    rgba(255, 255, 255, 0.50) 40%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.contact-hero-content {
+  max-width: 1300px;
+  margin: auto;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.contact-hero-content .contact-eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.contact-hero-content h1 {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1.05;
+  max-width: 450px;
+  color: #01133b;
+  margin: 0.5rem 0 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.contact-hero-content p {
+  max-width: 450px;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.8;
+  color: #0b0c0d;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-hero-modern {
+    min-height: 450px;
+  }
+
+  .contact-hero-overlay {
+    min-height: 450px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.80) 20%,
+      rgba(255, 255, 255, 0.30) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .contact-hero-content {
+    padding: 0 30px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    max-width: 400px;
+  }
+
+  .contact-hero-content p {
+    max-width: 400px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-modern {
+    min-height: 350px;
+  }
+
+  .contact-hero-overlay {
+    min-height: 350px;
+  }
+
+  .contact-hero-content {
+    padding: 0 20px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 1.6rem;
+    max-width: 300px;
+  }
+
+  .contact-hero-content p {
+    max-width: 300px;
+    font-size: 0.95rem;
+  }
+}
