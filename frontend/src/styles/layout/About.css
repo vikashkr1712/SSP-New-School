@@ -389,10 +389,9 @@
   }
 
   .about-principal__photo.about-image-placeholder--portrait {
-    /* make the photo container a square and limit its size */
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    max-width: 18rem; /* control square size */
+   width: 100%;
+    max-width: 100%;
+    aspect-ratio: unset;
     border-radius: 1rem;
     overflow: hidden;
   }
@@ -420,4 +419,147 @@
     line-height: 1.7;
     margin: 0;
   }
+}
+
+
+.mission-grid{
+  grid-template-columns: repeat(2,1fr);
+  margin-top:10px;
+}
+
+.mission-grid .program-card{
+  min-height: 250px;
+  display:flex;
+  align-items:center;
+}
+
+.mission-grid h3{
+  font-size:1.8rem;
+  color:#0f2b63;
+  margin-bottom:20px;
+}
+
+.mission-grid p{
+  font-size:1.05rem;
+  line-height:1.8;
+}
+
+.about-hero-modern{
+  min-height:720px;
+  background-image:url("/images/SSP School.png");
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+.about-hero-overlay{
+  min-height:600px;
+
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,0.8) 0%,
+    rgba(255,255,255,0.8) 20%,
+    rgba(255,255,255,0.35) 50%,
+    rgba(255,255,255,0.05) 100%
+  );
+
+  display:flex;
+  align-items:center;
+}
+
+.about-hero-content{
+  max-width:1300px;
+  margin:auto;
+  width:100%;
+  padding:0 60px;
+}
+
+.about-hero-content h1{
+  font-size: 4rem;
+  line-height:1.05;
+  max-width:650px;
+  color:#01133b;
+  margin:20px 0;
+  font-weight:700;
+}
+
+
+
+
+.about-hero-content p{
+  max-width:550px;
+  font-size:1.15rem;
+  line-height:1.8;
+  color:#0b0c0d;
+}
+
+
+.about-highlights{
+  max-width:1200px;
+  margin:-90px auto 0px;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  position:relative;
+  z-index:20;
+}
+
+.highlight-card{
+  background:rgba(255,255,255,0.01);
+  backdrop-filter:blur(5px);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:24px;
+  padding:35px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.highlight-icon{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:#eec75d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  flex-shrink:0;
+  margin-right:30px;
+}
+
+.highlight-card h3{
+  font-size:32px;
+  color:#0f1b4c;
+  margin-bottom:15px;
+}
+
+.highlight-card p{
+  color:#555;
+  line-height:1.8;
+}
+
+.about-timeline{
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
+.about-mission{
+  margin-top: 0 ;
+  padding-top: 10px;
+}
+
+.about-page .section-shell {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+.mission-section{
+  padding-top: 0;
+}
+
+.journey-section{
+  padding: 0px;
+
 }
