@@ -564,3 +564,229 @@
   padding: 0px;
 
 }
+
+
+/* =========================
+   ABOUT RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .about-principal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .about-card-grid,
+  .about-achievements__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+
+  .school-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 3rem auto;
+  }
+
+  .stat-box {
+    min-height: 180px;
+    padding: 1.5rem;
+  }
+
+  .stat-box h3,
+  .stat-box p {
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .school-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-box {
+    min-height: auto;
+    padding: 1.5rem 1rem;
+  }
+}
+.stat-box {
+  overflow: hidden;
+}
+.stat-box h3,
+.stat-box p {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+
+@media (max-width:768px){
+
+  .about-highlights{
+    grid-template-columns:1fr;
+    gap:20px;
+    margin-top:20px;
+  }
+
+  .highlight-card{
+    margin-top:0;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .highlight-card{
+      flex-direction:column;
+      text-align:center;
+      gap:16px;
+  }
+
+  .highlight-icon{
+      margin-right:0;
+  }
+
+  .highlight-card h3{
+      font-size:1.5rem;
+  }
+
+}
+
+.about-hero-modern{
+  min-height:720px;
+}
+
+.about-hero-overlay{
+  min-height:720px;
+}
+@media (max-width:768px){
+
+  .about-hero-modern,
+  .about-hero-overlay{
+      min-height:520px;
+  }
+
+}
+@media (max-width:480px){
+
+  .about-hero-modern,
+  .about-hero-overlay{
+      min-height:420px;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .about-hero-content{
+      padding:0 24px;
+  }
+
+  .about-hero-content h1{
+      font-size:2.8rem;
+      max-width:100%;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .about-hero-content h1{
+      font-size:2rem;
+      line-height:1.15;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .about-principal__grid{
+      grid-template-columns:1fr;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .campus-grid{
+      grid-template-columns:1fr;
+  }
+
+}
+
+@media (min-width:481px) and (max-width:768px){
+
+  .campus-grid{
+      grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media (max-width:480px){
+
+  .news-grid{
+      grid-template-columns:1fr;
+  }
+
+}
+
+@media (min-width:481px) and (max-width:768px){
+
+  .news-grid{
+      grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media (max-width:768px){
+
+  .about-highlights,
+  .mission-grid,
+  .campus-grid,
+  .news-grid,
+  .about-principal__grid{
+      grid-template-columns:1fr;
+  }
+
+  .highlight-card{
+      flex-direction:column;
+      text-align:center;
+  }
+
+  .about-hero-content{
+      padding:0 20px;
+  }
+
+  .about-hero-content h1{
+      font-size:2.3rem;
+      max-width:100%;
+  }
+
+  .highlight-card h3{
+      font-size:1.5rem;
+  }
+
+}

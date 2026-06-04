@@ -166,7 +166,7 @@
 .navbar__toggle:hover,
 .navbar__toggle:focus-visible {
   background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
+ 
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
@@ -360,5 +360,59 @@
   .navbar__menu {
     left: 0.35rem;
     right: 0.35rem;
+  }
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navbar__actions {
+    gap: 0;
+  }
+
+  .navbar__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 15px 40px rgba(0,0,0,.1);
+    display: none;
+  }
+
+  .navbar__menu.is-open {
+    display: flex;
+  }
+
+  .navbar__link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar__cta {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .navbar__school-name {
+    font-size: .9rem;
+  }
+
+  .navbar__logo {
+    width: 2.3rem;
+    height: 2.3rem;
   }
 }

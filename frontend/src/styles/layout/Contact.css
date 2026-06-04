@@ -822,3 +822,39 @@
     font-size: 0.95rem;
   }
 }
+
+
+/* =========================
+   CONTACT RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .contact-feature,
+  .contact-lower {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .contact-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-card,
+  .card-panel {
+    padding: 1rem;
+  }
+}

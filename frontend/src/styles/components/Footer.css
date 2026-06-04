@@ -182,3 +182,34 @@
 }
 
 
+/* =========================
+   FOOTER RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .footer__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer__nav {
+    justify-content: center;
+  }
+
+  .footer__copyright {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .footer__text {
+    font-size: .9rem;
+  }
+
+  .footer__link {
+    width: 100%;
+  }
+}
+
