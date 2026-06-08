@@ -31,7 +31,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 1.2rem;
+  
 }
 
 .admission-hero h1 {
@@ -849,6 +849,8 @@
       grid-template-columns:repeat(2,1fr);
       gap:20px;
       margin-top:30px;
+      margin-bottom:30px;
+      margin-left:30px;
   }
 
 }
@@ -858,6 +860,9 @@
   .admission-hero-banner-stats{
       grid-template-columns:1fr 1fr;
       gap:16px;
+      margin-top:0px;
+     
+      
   }
 
   .admission-hero-banner-stats strong{
@@ -895,6 +900,7 @@
   .requirement-card{
       padding:1.25rem;
       border-radius:18px;
+      margin-top:0px;
   }
 
   .requirement-card h3{
@@ -949,3 +955,13 @@
   }
 
 }
+
+@media (max-width:400px){
+
+  .admission-hero-banner-stats{
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:0px;
+  }
+}
+    
