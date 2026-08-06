@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { submitAdmissionInquiry } from "../../services/api";
 import "../../styles/layout/Admission.css";
 
 const admissionVisual = "/images/SSP School.png";
@@ -69,9 +68,7 @@ function validateForm(values) {
 function Admission() {
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
   const [activeFaq, setActiveFaq] = useState({ left: null, right: null });
 
   const handleChange = (event) => {
@@ -113,10 +110,9 @@ function Admission() {
     URL.revokeObjectURL(downloadUrl);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setSuccessMessage("");
-    setErrorMessage("");
 
     const validationErrors = validateForm(formData);
     setErrors(validationErrors);
@@ -125,18 +121,9 @@ function Admission() {
       return;
     }
 
-    try {
-      setIsSubmitting(true);
-      const response = await submitAdmissionInquiry(formData);
-      setSuccessMessage(response.data?.message || "Form submitted successfully. We will contact you shortly.");
-      setFormData(initialFormState);
-      setErrors({});
-    } catch (error) {
-      const apiMessage = error.response?.data?.message;
-      setErrorMessage(apiMessage || "Unable to submit the admission form. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    setSuccessMessage("Form submitted successfully. We will contact you shortly.");
+    setFormData(initialFormState);
+    setErrors({});
   };
 
   return (
@@ -365,8 +352,6 @@ function Admission() {
           </div>
 
           {successMessage ? <div className="form-alert form-alert--success">{successMessage}</div> : null}
-          {errorMessage ? <div className="form-alert form-alert--error">{errorMessage}</div> : null}
-
           <form className="admission-form" onSubmit={handleSubmit} noValidate>
             <div className="form-grid">
               <label className="field">
@@ -444,9 +429,7 @@ function Admission() {
               </label>
             </div>
 
-            <button type="submit" className="form-submit" disabled={isSubmitting}>
-              {isSubmitting ? "Submitting..." : "Submit Inquiry"}
-            </button>
+            <button type="submit" className="form-submit">Submit Inquiry</button>
           </form>
         </div>
       </section>
