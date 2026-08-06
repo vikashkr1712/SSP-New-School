@@ -86,6 +86,33 @@ function Admission() {
     }));
   };
 
+  const scrollToInquiryForm = () => {
+    document.getElementById("admission-inquiry-form")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const downloadProspectus = () => {
+    const prospectus = [
+      "SSP School Prospectus 2026-27",
+      "",
+      "Admissions are open for Kindergarten through Grade 12.",
+      "For admission enquiries, please complete the online inquiry form or contact the admissions office.",
+      "",
+      "SSP School",
+      "Varanasi, India",
+      "Email: admissions@sspschool.edu.in",
+      "Phone: +91 98765 43211",
+    ].join("\n");
+    const downloadUrl = URL.createObjectURL(new Blob([prospectus], { type: "text/plain" }));
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.download = "SSP-School-Prospectus-2026-27.txt";
+    link.click();
+    URL.revokeObjectURL(downloadUrl);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSuccessMessage("");
@@ -101,7 +128,7 @@ function Admission() {
     try {
       setIsSubmitting(true);
       const response = await submitAdmissionInquiry(formData);
-      setSuccessMessage(response.data?.message || "Admission inquiry submitted successfully.");
+      setSuccessMessage(response.data?.message || "Form submitted successfully. We will contact you shortly.");
       setFormData(initialFormState);
       setErrors({});
     } catch (error) {
@@ -144,11 +171,11 @@ function Admission() {
     </p>
 
     <div className="admission-hero-banner-buttons">
-      <button className="btn btn-primary">
+      <button type="button" className="btn btn-primary" onClick={scrollToInquiryForm}>
         Enquire Now →
       </button>
 
-      <button className="btn btn-outline">
+      <button type="button" className="btn btn-outline" onClick={downloadProspectus}>
         Download Prospectus
       </button>
     </div>
@@ -326,11 +353,11 @@ function Admission() {
             <h2>Admissions Open 2026-27</h2>
             <p>Take the first step towards your child’s bright future.</p>
           </div>
-          <button type="button" className="cta-button">Enquire Now</button>
+          <button type="button" className="cta-button" onClick={scrollToInquiryForm}>Enquire Now</button>
         </div>
       </section>
 
-      <section className="admission-form-wrap section-shell">
+      <section id="admission-inquiry-form" className="admission-form-wrap section-shell">
         <div className="admission-form-card">
           <div className="form-head">
             <span className="section-label">Admission Inquiry Form</span>
