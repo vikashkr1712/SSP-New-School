@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import "../../styles/layout/About.css";
 import "../../styles/layout/Home.css";
 
-const principalImage = "/images/Deepak-Kumar-Bajaj-1.jpg";
+const principalImage = "/images/Deepak-Kumar-Bajaj-1.webp";
 
-const campusImage = "/images/SSP School.png";
+const campusImage = "/images/SSP School.webp";
 
 const timeline = [
   {
