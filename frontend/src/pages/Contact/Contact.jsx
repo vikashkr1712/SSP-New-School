@@ -38,7 +38,7 @@ const contactHighlights = [
   },
 ];
 
-const contactHeroImage = "/images/SSP School.png";
+const contactHeroImage = "/images/SSP School.webp";
 
 const quickInfo = [
   "Principal: Dr. Ananya Sharma",

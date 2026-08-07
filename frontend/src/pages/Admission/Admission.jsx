@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../../styles/layout/Admission.css";
 
-const admissionVisual = "/images/SSP School.png";
+const admissionVisual = "/images/SSP School.webp";
 
 const faqItems = [
   {
