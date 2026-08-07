@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import "../../styles/layout/Home.css";
 
-import schoolBuilding from "../../assets/images/SSP School.png";
-import studentsImg from "../../assets/images/school student.jpg";
-import activityImg from "../../assets/images/school activity.jpg";
-import classroomImg from "../../assets/images/classroom_img.jpg";
+import schoolBuilding from "../../assets/images/SSP School.webp";
+import studentsImg from "../../assets/images/school student.webp";
+import activityImg from "../../assets/images/school activity.webp";
+import classroomImg from "../../assets/images/classroom_img.webp";
 
 const heroImage = schoolBuilding;
 const campusLifeImage = activityImg;
