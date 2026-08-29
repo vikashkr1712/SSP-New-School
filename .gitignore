@@ -22,6 +22,7 @@ frontend/src/assets/images/ChatGPT Image*.png
 .chrome-*/
 *-visual.png
 *-visual.jpg
+screenshots/
 # Environment files
 .env
 backend/.env

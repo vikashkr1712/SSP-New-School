@@ -18,7 +18,7 @@
 .contact-options__grid article > a { display:block; color:var(--ssp-text); font-size:13px; line-height:1.8; }
 .contact-options__grid article > a:last-child { margin-top:10px; color:var(--ssp-teal); font-weight:700; }
 
-.contact-main { display:grid; grid-template-columns:52% 48%; gap:65px; padding:52px max(var(--ssp-gutter),calc((100% - 1210px)/2)); background:#f5f0e7; }
+.contact-main { display:grid; grid-template-columns:minmax(0,52fr) minmax(0,48fr); gap:65px; padding:52px max(var(--ssp-gutter),calc((100% - 1210px)/2)); background:#f5f0e7; }
 .message-column > h2 { text-align:left; }
 .contact-form { display:grid; gap:16px; padding:25px 28px; border:1px solid var(--ssp-line); border-radius:13px; background:#fff; box-shadow:var(--ssp-shadow); }
 .contact-form label { display:block; }
@@ -32,7 +32,7 @@
 .consent-field input { margin:2px 0 0; }
 .consent-field > span { margin:0!important; color:var(--ssp-text)!important; font-weight:400!important; }
 .consent-field small { grid-column:2; }
-.contact-form > button { width:180px; min-height:43px; border:0; border-radius:4px; color:#fff; background:var(--ssp-navy-deep); font-size:12px; font-weight:700; cursor:pointer; }
+.contact-form > button { width:180px; min-height:43px; border:0; border-radius:4px; color:#fff; background:var(--ssp-navy-deep); font-size:12px; font-weight:700; cursor:pointer; transition:transform 220ms ease,background-color 220ms ease,box-shadow 220ms ease; }
 .contact-form__status { min-height:0; margin:0; color:var(--ssp-teal); font-size:12px; }
 
 .campus-details { padding:12px 0 0 55px; border-left:1px solid var(--ssp-gold); }
@@ -94,6 +94,11 @@
 .contact-final-cta > div:last-child { display:flex; flex-direction:column; justify-content:center; padding:35px 48px; }
 .contact-final-cta h2 { font-size:clamp(34px,3.5vw,48px); }
 .contact-final-cta .school-button { width:fit-content; }
+
+@media(hover:hover) and (pointer:fine){
+  .contact-form > button:hover{transform:translateY(-2px);background:#061f37;box-shadow:0 8px 20px rgba(16,42,67,.16)}
+  .contact-faq button:hover{background:#f7f4ed}
+}
 
 @media(max-width:940px){
   .contact-hero{grid-template-columns:1fr 1fr}.contact-hero__copy{padding:46px 28px}.contact-hero h1{font-size:clamp(44px,6vw,58px)}

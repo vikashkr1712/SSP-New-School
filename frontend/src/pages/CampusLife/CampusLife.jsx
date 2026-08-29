@@ -42,16 +42,14 @@ function CampusLife() {
   return (
     <main className="campus-page">
       <section className="campus-hero">
-        <div className="campus-hero__photos">
-          <img className="campus-hero__sport" src={sportsImage} alt="Students playing basketball at SSP" />
-          <img className="campus-hero__club" src={roboticsImage} alt="Students collaborating in a robotics club" />
-          <img className="campus-hero__art" src={artsImage} alt="An SSP student painting in the arts studio" />
-        </div>
         <div className="campus-hero__copy">
           <span className="page-eyebrow">CAMPUS LIFE</span>
           <h1>More than a school day.</h1>
           <p>Friendships, passions and experiences shape who our students become.</p>
           <nav className="breadcrumb" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><span>Campus Life</span></nav>
+        </div>
+        <div className="campus-hero__visual">
+          <img src={communityImage} alt="SSP students sharing campus life with an educator outdoors" />
         </div>
       </section>
 
@@ -63,7 +61,7 @@ function CampusLife() {
           <p>From the field to the stage, from ideas to impact—every student finds their space to shine.</p>
         </header>
         <div className="passion-grid">
-          {categories.map((category) => <Link to="/contact" key={category.title}><CampusIcon name={category.icon}/><span>{category.title}</span></Link>)}
+          {categories.map((category) => <a href="#weekly-possibilities" key={category.title}><CampusIcon name={category.icon}/><span>{category.title}</span></a>)}
         </div>
       </section>
 
@@ -75,7 +73,7 @@ function CampusLife() {
             <h2>Confidence is built through experience.</h2>
             <p>At SSP, every opportunity is designed to help students discover their strengths, step outside their comfort zones and grow with purpose.</p>
             <p>Whether it’s on the field, on stage or in the community—we learn by doing, we lead by example, and we grow together.</p>
-            <Link className="school-button school-button--navy" to="/contact">Explore Activities</Link>
+            <a className="school-button school-button--navy" href="#weekly-possibilities">Explore Activities</a>
           </div>
         </div>
         <div className="explore-grow__right">
@@ -84,7 +82,7 @@ function CampusLife() {
         </div>
       </section>
 
-      <section className="weekly-section">
+      <section className="weekly-section" id="weekly-possibilities">
         <header className="section-heading section-heading--center"><h2>A week full of possibilities.</h2></header>
         <div className="weekly-grid">
           {weeklyCards.map((card) => (
@@ -126,7 +124,7 @@ function CampusLife() {
 
       <section className="student-story">
         <div className="student-story__image"><img src={debateImage} alt="Aarav speaking confidently at SSP" /></div>
-        <blockquote><p>“At SSP, I found the confidence to try things I never imagined.”</p><strong>Aarav, Grade 10</strong><Link to="/contact">Read Student Stories &nbsp; →</Link></blockquote>
+        <blockquote><p>“At SSP, I found the confidence to try things I never imagined.”</p><strong>Aarav, Grade 10</strong><Link to="/about">Read Student Stories &nbsp; →</Link></blockquote>
       </section>
 
       <section className="campus-final-cta">

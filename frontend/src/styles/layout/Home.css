@@ -102,9 +102,10 @@
 
 .home-hero__visual {
   position: relative;
-  min-height: 610px;
+  min-height: 590px;
+  margin: 20px 24px 20px 0;
   overflow: hidden;
-  border-bottom-left-radius: 150px;
+  border-radius: 20px 20px 130px 20px;
 }
 
 .home-hero__visual::before {
@@ -120,7 +121,7 @@
 .home-hero__visual img {
   width: 100%;
   height: 100%;
-  min-height: 610px;
+  min-height: 590px;
   object-fit: cover;
   object-position: 52% center;
 }
@@ -218,7 +219,11 @@
 
 .home-story {
   display: grid;
+  width: min(calc(100% - (2 * var(--ssp-gutter))), 1280px);
   grid-template-columns: 50% 50%;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 18px;
   background: #fff;
 }
 
@@ -351,7 +356,11 @@
 
   .home-hero__visual,
   .home-hero__visual img {
-    min-height: 570px;
+    min-height: 540px;
+  }
+
+  .home-hero__visual {
+    margin: 16px 16px 16px 0;
   }
 
   .home-hero__proof {
@@ -417,11 +426,12 @@
 
   .home-hero__visual,
   .home-hero__visual img {
-    min-height: 430px;
+    min-height: 410px;
   }
 
   .home-hero__visual {
-    border-bottom-left-radius: 90px;
+    margin: 0 18px 20px;
+    border-radius: 20px 20px 80px;
   }
 
   .experience-grid {
@@ -440,6 +450,10 @@
 
   .home-story__image {
     min-height: 380px;
+  }
+
+  .home-story {
+    width: calc(100% - (2 * var(--ssp-gutter)));
   }
 
   .home-story__copy {

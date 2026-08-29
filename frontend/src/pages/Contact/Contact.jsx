@@ -94,7 +94,7 @@ function Contact() {
       <section className="contact-main">
         <div className="message-column">
           <h2>Send us a message.</h2>
-          <form className="contact-form" onSubmit={handleSubmit} noValidate>
+          <form className="contact-form" id="contact-message" onSubmit={handleSubmit} noValidate>
             <label><span>Full Name</span><input name="fullName" value={form.fullName} onChange={handleChange} placeholder="Enter your full name" aria-invalid={Boolean(errors.fullName)}/>{errors.fullName && <small>{errors.fullName}</small>}</label>
             <label><span>Email Address</span><input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Enter your email address" aria-invalid={Boolean(errors.email)}/>{errors.email && <small>{errors.email}</small>}</label>
             <label><span>Phone Number</span><input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="Enter your phone number" aria-invalid={Boolean(errors.phone)}/>{errors.phone && <small>{errors.phone}</small>}</label>
@@ -131,10 +131,10 @@ function Contact() {
 
       <section className="visit-band">
         <div><h2>Planning a campus visit?</h2><p>We’d love to welcome you to our campus. Book a visit and experience SSP in person.</p></div>
-        <div className="button-row"><Link className="school-button visit-band__gold" to="/contact">Book a Campus Visit</Link><Link className="school-button visit-band__outline" to="/admission">Admissions Information</Link></div>
+        <div className="button-row"><a className="school-button visit-band__gold" href="#contact-message">Book a Campus Visit</a><Link className="school-button visit-band__outline" to="/admission">Admissions Information</Link></div>
       </section>
 
-      <section className="contact-faq">
+      <section className="contact-faq" id="contact-faq">
         <h2>Frequently asked questions.</h2>
         <div>
           {faqs.map((faq, index) => {
@@ -142,12 +142,12 @@ function Contact() {
             return <article key={faq.question}><h3><button type="button" onClick={() => setOpenFaq(open ? null : index)} aria-expanded={open} aria-controls={`contact-faq-${index}`}>{faq.question}<span aria-hidden="true">{open ? "−" : "+"}</span></button></h3><div id={`contact-faq-${index}`} hidden={!open}><p>{faq.answer}</p></div></article>;
           })}
         </div>
-        <Link to="/contact">View All FAQs &nbsp; →</Link>
+        <a href="#contact-faq">View All FAQs &nbsp; →</a>
       </section>
 
       <section className="contact-final-cta gold-corner-lines">
         <div><img src={familyImage} alt="A family having a conversation with the SSP admissions team" /></div>
-        <div><h2>Your SSP journey can begin with a conversation.</h2><Link className="school-button school-button--navy" to="/contact">Talk to Our Team</Link></div>
+        <div><h2>Your SSP journey can begin with a conversation.</h2><a className="school-button school-button--navy" href="#contact-message">Talk to Our Team</a></div>
       </section>
     </main>
   );

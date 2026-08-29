@@ -122,7 +122,11 @@
 
 .academics-approach {
   display: grid;
+  width: min(calc(100% - (2 * var(--ssp-gutter))), 1280px);
   grid-template-columns: 50% 50%;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 18px;
   background: #fff;
 }
 
@@ -395,7 +399,11 @@
 
 .academic-final-cta {
   display: grid;
+  width: min(calc(100% - (2 * var(--ssp-gutter))), 1240px);
   grid-template-columns: 46% 54%;
+  margin: 0 auto var(--ssp-section);
+  overflow: hidden;
+  border-radius: 18px;
   background: #fff;
 }
 
@@ -437,6 +445,15 @@
 
   .academics-approach__copy {
     padding: 46px 30px;
+  }
+
+  .academics-approach {
+    grid-template-columns: 1fr;
+  }
+
+  .academics-approach__image {
+    min-height: 460px;
+    max-height: 520px;
   }
 
   .stage-grid,
@@ -526,6 +543,11 @@
 
   .academic-final-cta__image {
     min-height: 330px;
+  }
+
+  .academics-approach,
+  .academic-final-cta {
+    width: calc(100% - (2 * var(--ssp-gutter)));
   }
 }
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import schoolLogo from "../assets/icons/ssp-school-logo.svg";
 import "../styles/components/Navbar.css";
@@ -16,6 +16,23 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
 
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleEscape = (event) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="navbar">
       <div className="navbar__inner">
@@ -28,15 +45,16 @@ function Navbar() {
           type="button"
           className="navbar__toggle"
           onClick={() => setIsMenuOpen((open) => !open)}
-          aria-label="Toggle navigation menu"
+          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation-panel"
         >
           <span />
           <span />
           <span />
         </button>
 
-        <div className={`navbar__panel ${isMenuOpen ? "is-open" : ""}`}>
+        <div id="primary-navigation-panel" className={`navbar__panel ${isMenuOpen ? "is-open" : ""}`}>
           <nav className="navbar__menu" aria-label="Primary navigation">
             {navItems.map((item) => (
               <NavLink
@@ -50,9 +68,6 @@ function Navbar() {
               </NavLink>
             ))}
           </nav>
-          <NavLink to="/parent-portal" className="navbar__portal" onClick={closeMenu}>
-            Parent Portal
-          </NavLink>
           <NavLink to="/admission" className="navbar__cta" onClick={closeMenu}>
             Apply Now
           </NavLink>

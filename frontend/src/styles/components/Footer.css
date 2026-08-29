@@ -5,40 +5,50 @@
 
 .footer__inner {
   display: grid;
-  width: min(100%, 1240px);
-  min-height: 158px;
+  width: min(100%, 1280px);
+  min-height: 250px;
   grid-template-columns: 1.7fr repeat(3, 1fr);
-  gap: 38px;
+  gap: clamp(42px, 5vw, 72px);
   align-items: center;
   margin: 0 auto;
-  padding: 28px var(--ssp-gutter);
+  padding: 52px var(--ssp-gutter);
 }
 
 .footer__identity {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 14px;
+  gap: 16px;
+  font-size: 16px;
   font-weight: 700;
   white-space: nowrap;
 }
 
 .footer__logo-image {
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
 }
 
 .footer__column {
-  min-height: 94px;
-  padding-left: 30px;
-  border-left: 1px solid rgba(214, 166, 75, 0.72);
+  position: relative;
+  min-height: 136px;
+  padding: 6px 0 6px 36px;
+}
+
+.footer__column::before {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 1px;
+  background: rgba(214, 166, 75, 0.72);
+  content: "";
 }
 
 .footer__column h2 {
-  margin: 0 0 4px;
+  margin: 0 0 10px;
   color: #fff;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -46,14 +56,27 @@
 .footer__column span {
   display: block;
   color: rgba(255, 255, 255, 0.92);
-  font-size: 11px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.85;
 }
 
-@media (max-width: 760px) {
+.footer__column a {
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__column a:hover {
+    color: var(--ssp-gold);
+    transform: translateX(3px);
+  }
+}
+
+@media (max-width: 800px) {
   .footer__inner {
     grid-template-columns: repeat(2, 1fr);
+    gap: 36px 48px;
     align-items: start;
+    padding-block: 48px;
   }
 
   .footer__identity {
@@ -64,8 +87,8 @@
 @media (max-width: 480px) {
   .footer__inner {
     grid-template-columns: 1fr;
-    gap: 24px;
-    padding-block: 36px;
+    gap: 32px;
+    padding-block: 48px;
   }
 
   .footer__identity {
@@ -75,11 +98,15 @@
   .footer__column {
     min-height: auto;
     padding-left: 0;
-    border-left: 0;
+  }
+
+  .footer__column::before {
+    display: none;
   }
 
   .footer__column a,
   .footer__column span {
     font-size: 13px;
+    line-height: 1.9;
   }
 }

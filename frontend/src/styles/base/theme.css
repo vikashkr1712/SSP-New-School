@@ -9,7 +9,7 @@
   --ssp-line: #e5ddd0;
   --ssp-shadow: 0 12px 30px rgba(16, 42, 67, 0.09);
   --ssp-radius: 16px;
-  --ssp-container: 1200px;
+  --ssp-container: 1280px;
   --ssp-gutter: clamp(22px, 4.5vw, 64px);
   --ssp-section: clamp(64px, 7vw, 94px);
   --font-heading: Georgia, "Times New Roman", serif;
@@ -55,7 +55,6 @@ body {
   width: 100%;
   min-height: 100%;
   margin: 0;
-  overflow-x: hidden;
   color: var(--ssp-text);
   background: var(--ssp-ivory);
   font-family: var(--font-body);
@@ -65,11 +64,28 @@ body {
 }
 
 #root {
+  width: 100%;
   min-height: 100%;
 }
 
 img {
   display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+main,
+section,
+article,
+header,
+footer,
+nav,
+div {
+  min-width: 0;
+}
+
+main,
+section {
   max-width: 100%;
 }
 
@@ -87,6 +103,7 @@ h3 {
   color: var(--ssp-navy);
   font-family: var(--font-heading);
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -157,6 +174,7 @@ select {
   font-size: clamp(20px, 2.2vw, 28px);
   line-height: 1.25;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .statement-strip i {
@@ -196,6 +214,12 @@ select {
   font-weight: 650;
   line-height: 1.2;
   cursor: pointer;
+  transition:
+    transform 220ms ease,
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .school-button--navy {
@@ -207,6 +231,127 @@ select {
   color: var(--ssp-teal);
   border-color: var(--ssp-teal);
   background: transparent;
+}
+
+.experience-card,
+.community-tile,
+.passion-grid a,
+.contact-options__grid article,
+.guidance-card,
+.stage-card,
+.subject-card,
+.admission-info-cards article,
+.weekly-grid article {
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.experience-card > img,
+.community-tile img,
+.contact-options__grid svg,
+.subject-card > img,
+.weekly-grid img {
+  transition: transform 260ms ease;
+}
+
+.experience-card a span,
+.text-link span,
+.student-story blockquote a,
+.events-section__heading a,
+.contact-options__grid article > a:last-child,
+.community-tile i {
+  display: inline-block;
+  transition: transform 220ms ease;
+}
+
+.contact-form input:not([type="checkbox"]),
+.contact-form select,
+.contact-form textarea,
+.callback-form input,
+.callback-form select {
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contact-form input:not([type="checkbox"]):focus,
+.contact-form select:focus,
+.contact-form textarea:focus,
+.callback-form input:focus,
+.callback-form select:focus {
+  border-color: var(--ssp-teal);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(47, 124, 120, 0.15);
+}
+
+#weekly-possibilities,
+#contact-message,
+#contact-faq,
+#admissions-callback {
+  scroll-margin-top: 28px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .school-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 42, 67, 0.16);
+  }
+
+  .school-button--navy:hover {
+    border-color: #061f37;
+    background: #061f37;
+  }
+
+  .school-button--outline:hover {
+    color: #fff;
+    border-color: var(--ssp-teal);
+    background: var(--ssp-teal);
+  }
+
+  .experience-card:hover,
+  .community-tile:hover,
+  .passion-grid a:hover,
+  .contact-options__grid article:hover {
+    transform: translateY(-4px);
+    border-color: rgba(47, 124, 120, 0.32);
+    box-shadow: 0 16px 34px rgba(16, 42, 67, 0.13);
+  }
+
+  .guidance-card:hover,
+  .stage-card:hover,
+  .subject-card:hover,
+  .admission-info-cards article:hover,
+  .weekly-grid article:hover {
+    transform: translateY(-3px);
+    border-color: rgba(47, 124, 120, 0.28);
+    box-shadow: 0 14px 30px rgba(16, 42, 67, 0.11);
+  }
+
+  .experience-card:hover > img,
+  .community-tile:hover img {
+    transform: scale(1.025);
+  }
+
+  .subject-card:hover > img,
+  .weekly-grid article:hover img {
+    transform: scale(1.02);
+  }
+
+  .experience-card a:hover span,
+  .text-link:hover span,
+  .student-story blockquote a:hover,
+  .events-section__heading a:hover,
+  .contact-options__grid article > a:last-child:hover,
+  .community-tile:hover i {
+    transform: translateX(4px);
+  }
+}
+
+.school-button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .gold-corner-lines {
@@ -251,8 +396,27 @@ select {
     font-size: 18px;
   }
 
+  .section-heading h2 {
+    font-size: clamp(32px, 10vw, 44px);
+  }
+
   .button-row,
   .school-button {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

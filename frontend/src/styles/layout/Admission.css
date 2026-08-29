@@ -137,7 +137,11 @@
 
 .plan-visit {
   display: grid;
+  width: min(calc(100% - (2 * var(--ssp-gutter))), 1280px);
   grid-template-columns: 50% 50%;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 18px;
   background: #fff;
 }
 
@@ -361,7 +365,11 @@
 
 .admissions-support {
   display: grid;
+  width: min(calc(100% - (2 * var(--ssp-gutter))), 1280px);
   grid-template-columns: 46% 54%;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 18px;
   background: #fff;
 }
 
@@ -473,6 +481,20 @@
   font-size: 12px;
   font-weight: 650;
   cursor: pointer;
+  transition: transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .callback-form button:hover {
+    transform: translateY(-2px);
+    background: #061f37;
+    box-shadow: 0 8px 20px rgba(16, 42, 67, 0.16);
+  }
+}
+
+.callback-form button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .callback-form__status {
@@ -666,5 +688,10 @@
   .admissions-final-cta__image {
     min-height: 320px;
     border-radius: 0 0 17px 17px;
+  }
+
+  .plan-visit,
+  .admissions-support {
+    width: calc(100% - (2 * var(--ssp-gutter)));
   }
 }
