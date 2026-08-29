@@ -1,418 +1,194 @@
-@import "../base/theme.css";
-
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
-  color: var(--color-text);
-  box-shadow: none;
-  border-bottom: 1px solid transparent;
-  backdrop-filter: blur(10px);
-  transition: box-shadow var(--transition-base), background-color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
-}
-
-.navbar.scrolled {
-  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.9));
-  box-shadow: 0 6px 22px rgba(9,28,56,0.08);
-  border-bottom: 1px solid var(--color-border);
-  transform: translateY(0);
+  position: relative;
+  z-index: 50;
+  width: 100%;
+  height: 88px;
+  border-bottom: 1px solid #e8e4dc;
+  background: #fff;
 }
 
 .navbar__inner {
-  width: 100%;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0.85rem var(--content-gutter);
   display: flex;
+  width: min(100%, 1360px);
+  height: 100%;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  position: relative;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3vw, 42px);
 }
 
 .navbar__brand {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 0.85rem;
-  color: var(--color-text);
-  text-decoration: none;
-  min-width: 0;
-  flex: 0 1 auto;
-}
-
-.navbar__logo {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid rgba(11, 78, 162, 0.12);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  flex-shrink: 0;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  gap: 13px;
+  color: var(--ssp-navy);
 }
 
 .navbar__logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 54px;
+  height: 54px;
 }
 
 .navbar__school-name {
-  font-size: clamp(0.98rem, 1.1vw, 1.15rem);
-  font-weight: 700;
-  letter-spacing: 0.005em;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: 0.01em;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: clamp(7.5rem, 24vw, 16rem);
+}
+
+.navbar__panel,
+.navbar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__panel {
+  min-width: 0;
+  gap: clamp(18px, 2.2vw, 34px);
+}
+
+.navbar__menu {
+  gap: clamp(16px, 1.9vw, 30px);
+}
+
+.navbar__link,
+.navbar__portal {
+  position: relative;
+  padding: 34px 0 31px;
+  color: var(--ssp-navy);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.navbar__link::after {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  left: 0;
+  height: 2px;
+  background: transparent;
+  content: "";
+}
+
+.navbar__link.is-active {
+  color: var(--ssp-teal);
+}
+
+.navbar__link.is-active::after {
+  background: var(--ssp-teal);
+}
+
+.navbar__cta {
+  display: inline-flex;
+  min-width: 118px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--ssp-gold);
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
 }
 
 .navbar__toggle {
   display: none;
-  width: 2.85rem;
-  height: 2.85rem;
-  min-width: 2.85rem;
-  min-height: 2.85rem;
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-md);
-  background: var(--glass-bg);
-  cursor: pointer;
-  padding: 0.55rem;
-  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
-  z-index: 1100;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
 }
 
 .navbar__toggle span {
   display: block;
   width: 100%;
   height: 2px;
-  background: var(--color-primary-dark);
-  border-radius: 999px;
-  transition: transform 220ms var(--motion-ease), opacity 200ms var(--motion-ease), background-color 180ms var(--motion-ease);
+  margin: 5px 0;
+  background: var(--ssp-navy);
 }
 
-.navbar__toggle span + span {
-  margin-top: 5px;
-}
-
-.navbar__menu {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.navbar__actions {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.navbar__link {
-  position: relative;
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: clamp(0.95rem, 1vw, 1.02rem);
-  letter-spacing: 0.01em;
-  min-height: 2.75rem;
-  padding: 0.7rem 0.95rem;
-  border-radius: var(--radius-pill);
-  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
-}
-
-.navbar__link:hover,
-.navbar__link:focus-visible,
-.navbar__link.is-active {
-  background: linear-gradient(90deg, var(--color-accent) 0%, rgba(255,210,63,0.95) 100%);
-  color: var(--color-primary-dark);
-  box-shadow: 0 10px 28px rgba(11,86,194,0.08);
-  transform: translateY(-2px);
-}
-
-.navbar__link::after {
-  content: "";
-  position: absolute;
-  left: 0.95rem;
-  right: 0.95rem;
-  bottom: 0.35rem;
-  height: 2px;
-  border-radius: 999px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: center;
-  opacity: 0.5;
-  transition: transform 220ms var(--motion-ease), opacity 220ms var(--motion-ease);
-}
-
-.navbar__link:hover::after,
-.navbar__link:focus-visible::after,
-.navbar__link.is-active::after {
-  transform: scaleX(1);
-  opacity: 0.85;
-}
-
-.navbar__link.is-active {
-  background: linear-gradient(90deg, rgba(11,102,194,0.12), rgba(11,86,194,0.08));
-  color: var(--color-primary-dark);
-  box-shadow: 0 8px 24px rgba(9,28,56,0.06);
-  transform: translateY(-2px) scale(1.01);
-}
-
-.navbar__toggle:hover,
-.navbar__toggle:focus-visible {
-  background: rgba(255, 255, 255, 0.15);
- 
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-}
-
-@media (min-width: 1024px) {
-  .navbar__inner {
-    gap: 1.25rem;
+@media (max-width: 1120px) {
+  .navbar__school-name {
+    font-size: 16px;
   }
 
+  .navbar__panel,
   .navbar__menu {
-    gap: 0.6rem;
-  }
-
-  .navbar__link {
-    padding-inline: 1.1rem;
+    gap: 15px;
   }
 }
 
-@media (min-width: 1536px) {
-  .navbar__inner {
-    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,252,0.98));
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar__inner {
-    gap: 0.75rem;
+@media (max-width: 940px) {
+  .navbar {
+    height: 76px;
   }
 
-  .navbar__brand {
-    gap: 0.7rem;
-  }
-
-  .navbar__logo {
-    width: 2.5rem;
-    height: 2.5rem;
+  .navbar__logo-image {
+    width: 48px;
+    height: 48px;
   }
 
   .navbar__toggle {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 0 0 auto;
-    /* position toggle at the right edge */
+    display: block;
+  }
+
+  .navbar__panel {
     position: absolute;
-    right: var(--content-gutter);
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .navbar__menu {
-    position: absolute;
-    left: var(--content-gutter);
-    right: calc(var(--content-gutter) + 3.5rem); /* leave space for toggle */
-    top: calc(100% + 0.5rem);
-    display: grid;
-    gap: 0.45rem;
-    padding: 0.55rem 0.85rem 0.85rem;
-    background: rgba(255, 255, 248, 0.98);
-    box-shadow: var(--shadow-md);
-    max-height: 0;
-    overflow: hidden;
-    overflow-y: auto;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-0.35rem);
-    transition: max-height var(--transition-base), opacity var(--transition-fast), transform var(--transition-fast);
-    border-radius: var(--radius-lg);
-    border: 1px solid rgba(11, 78, 162, 0.08);
-  }
-
-  .navbar__menu.is-open {
-    max-height: calc(100vh - 5.5rem);
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .navbar__link {
-    width: 100%;
-    border-radius: var(--radius-md);
-    background: rgba(11, 78, 162, 0.04);
-    justify-content: center;
-  }
-
-  .navbar__link::after {
-    left: 1rem;
-    right: 1rem;
-    bottom: 0.45rem;
-  }
-}
-
-/* CTA button */
-.navbar__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.65rem 1rem;
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: #fff;
-  font-weight: 700;
-  border-radius: 999px;
-  box-shadow: var(--btn-shadow);
-  text-decoration: none;
-  transition: transform 240ms var(--motion-ease), box-shadow 240ms var(--motion-ease), opacity 180ms var(--motion-ease);
-}
-
-.navbar__cta:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 18px 38px rgba(11,86,194,0.12);
-}
-
-.navbar__cta:active {
-  transform: translateY(-1px) scale(0.99);
-}
-
-@media (max-width: 768px) {
-  .navbar__cta {
+    top: 76px;
+    right: 0;
+    left: 0;
     display: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .navbar__inner {
-    padding-block: 0.75rem;
-    gap: 0.55rem;
+    align-items: stretch;
+    padding: 16px 22px 22px;
+    border-top: 1px solid var(--ssp-line);
+    background: #fff;
+    box-shadow: var(--ssp-shadow);
   }
 
-  .navbar__brand {
-    gap: 0.6rem;
-  }
-
-  .navbar__logo {
-    width: 2.35rem;
-    height: 2.35rem;
-  }
-
-  .navbar__school-name {
-    max-width: 8.75rem;
-  }
-
-  .navbar__toggle {
-    width: 2.65rem;
-    height: 2.65rem;
-    padding: 0.45rem;
-  }
-
+  .navbar__panel.is-open,
   .navbar__menu {
-    left: 0.5rem;
-    right: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar__inner {
-    padding-inline: 0.55rem;
-  }
-
-  .navbar__school-name {
-    max-width: 7.5rem;
-    font-size: 0.94rem;
-  }
-
-  .navbar__link {
-    padding: 0.65rem 0.9rem;
-  }
-}
-
-@media (max-width: 390px) {
-  .navbar__inner {
-    gap: 0.55rem;
-  }
-
-  .navbar__brand {
-    gap: 0.5rem;
-  }
-
-  .navbar__logo {
-    width: 2.2rem;
-    height: 2.2rem;
-  }
-
-  .navbar__school-name {
-    max-width: 6.6rem;
-  }
-
-  .navbar__toggle {
-    width: 2.55rem;
-    height: 2.55rem;
-  }
-
-  .navbar__menu {
-    left: 0.35rem;
-    right: 0.35rem;
-  }
-}
-
-/* =========================
-   MOBILE NAVBAR
-========================= */
-
-@media (max-width: 768px) {
-
-  .navbar__toggle {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: stretch;
   }
 
-  .navbar__actions {
+  .navbar__menu {
     gap: 0;
   }
 
-  .navbar__menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    padding: 1rem;
-    box-shadow: 0 15px 40px rgba(0,0,0,.1);
+  .navbar__link,
+  .navbar__portal {
+    padding: 12px 4px;
+    font-size: 14px;
+  }
+
+  .navbar__link::after {
     display: none;
   }
 
-  .navbar__menu.is-open {
-    display: flex;
-  }
-
-  .navbar__link {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .navbar__cta {
-    display: none;
+  .navbar__portal {
+    margin-bottom: 10px;
   }
 }
 
-@media (max-width: 480px) {
-
-  .navbar__school-name {
-    font-size: .9rem;
+@media (max-width: 430px) {
+  .navbar__inner {
+    padding-inline: 16px;
   }
 
-  .navbar__logo {
-    width: 2.3rem;
-    height: 2.3rem;
+  .navbar__school-name {
+    font-size: 14px;
+  }
+
+  .navbar__logo-image {
+    width: 44px;
+    height: 44px;
   }
 }

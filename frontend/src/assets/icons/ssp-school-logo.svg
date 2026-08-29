@@ -1,54 +1,5 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="shield" x1="76" y1="52" x2="180" y2="194" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#173A74"/>
-      <stop offset="1" stop-color="#2C5AA0"/>
-    </linearGradient>
-    <linearGradient id="crestRed" x1="68" y1="186" x2="188" y2="186" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#D63F3F"/>
-      <stop offset="1" stop-color="#C42828"/>
-    </linearGradient>
-    <linearGradient id="leaf" x1="44" y1="76" x2="84" y2="190" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#203C67"/>
-      <stop offset="1" stop-color="#2E568B"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="256" height="256" fill="#ffffff"/>
-
-  <g transform="translate(0 4)">
-    <path d="M81 45L95 33L115 47L130 27L147 47L169 33L183 45L175 62H89L81 45Z" fill="#173A74"/>
-    <rect x="92" y="45" width="72" height="12" rx="6" fill="#173A74"/>
-    <path d="M90 66C90 53 100 43 113 43H143C156 43 166 53 166 66V95C166 122 149 145 128 155C107 145 90 122 90 95V66Z" fill="url(#shield)" stroke="#0F2E60" stroke-width="4"/>
-
-    <path d="M99 83H157V101C157 122 145 138 128 146C111 138 99 122 99 101V83Z" fill="#ffffff"/>
-    <path d="M109 90H147V98H109V90ZM109 102H147V110H109V102Z" fill="#D9E8FF"/>
-
-    <rect x="106" y="63" width="44" height="22" rx="5" fill="#ffffff" stroke="#CFD9EA" stroke-width="2"/>
-    <path d="M110 67H140V78H110V67Z" fill="#D81E2D" opacity="0.12"/>
-    <text x="128" y="79" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">SSP</text>
-
-    <g fill="url(#leaf)">
-      <path d="M73 72C50 83 40 104 42 126C50 111 61 96 75 89L73 72Z"/>
-      <path d="M65 90C46 102 37 123 39 144C47 130 58 116 71 108L65 90Z"/>
-      <path d="M60 110C44 123 38 141 41 160C48 146 57 134 69 126L60 110Z"/>
-      <path d="M57 131C44 144 41 160 45 177C51 164 59 154 69 147L57 131Z"/>
-      <path d="M56 152C46 163 44 175 48 190C53 180 60 172 68 166L56 152Z"/>
-
-      <path d="M183 72C206 83 216 104 214 126C206 111 195 96 181 89L183 72Z"/>
-      <path d="M191 90C210 102 219 123 217 144C209 130 198 116 185 108L191 90Z"/>
-      <path d="M196 110C212 123 218 141 215 160C208 146 199 134 187 126L196 110Z"/>
-      <path d="M199 131C212 144 215 160 211 177C205 164 197 154 187 147L199 131Z"/>
-      <path d="M200 152C210 163 212 175 208 190C203 180 196 172 188 166L200 152Z"/>
-    </g>
-
-    <path d="M70 189C82 177 100 170 128 170C156 170 174 177 186 189L181 205C166 195 149 190 128 190C107 190 90 195 75 205L70 189Z" fill="url(#crestRed)"/>
-    <path d="M82 194C93 186 108 181 128 181C148 181 163 186 174 194L169 201C158 195 144 191 128 191C112 191 98 195 87 201L82 194Z" fill="#F7D4D4" opacity="0.45"/>
-
-    <path d="M82 186C66 184 58 179 51 169C64 172 78 173 92 171L82 186Z" fill="#D63F3F"/>
-    <path d="M174 186C190 184 198 179 205 169C192 172 178 173 164 171L174 186Z" fill="#D63F3F"/>
-
-    <text x="128" y="222" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#FFFFFF">SSP SCHOOLS</text>
-    <text x="128" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.6" fill="#173A74">WWW.SSPSCHOOLS.IN</text>
-  </g>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="37.5" fill="#F8F5EE" stroke="#D6A64B" stroke-width="3"/>
+  <circle cx="40" cy="40" r="29.5" stroke="#102A43" stroke-opacity=".12"/>
+  <text x="40" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#102A43">SSP</text>
 </svg>

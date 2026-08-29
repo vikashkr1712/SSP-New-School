@@ -1,41 +1,37 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import schoolLogo from "../assets/icons/ssp-school-logo.svg";
 import "../styles/components/Footer.css";
-
-const footerLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Admission", to: "/admission" },
-  { label: "Contact", to: "/contact" },
-];
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <div className="footer__brand">
-          <div className="footer__brand-row">
-            <span className="footer__logo" aria-hidden="true">
-              <img className="footer__logo-image" src={schoolLogo} alt="" />
-            </span>
-            <span className="footer__school-name">SSP School</span>
-          </div>
-          <p className="footer__text">
-            Building a strong learning environment with care, discipline, and growth.
-          </p>
+        <div className="footer__identity">
+          <img className="footer__logo-image" src={schoolLogo} alt="" />
+          <span>SSP PUBLIC SCHOOL</span>
         </div>
 
-        <nav className="footer__nav" aria-label="Footer navigation">
-          {footerLinks.map((item) => (
-            <NavLink key={item.to} to={item.to} className="footer__link">
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="footer__column">
+          <h2>Quick Links</h2>
+          <Link to="/about">About</Link>
+          <Link to="/academics">Academics</Link>
+          <Link to="/campus-life">Campus Life</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
 
-        <p className="footer__copyright">
-          © {new Date().getFullYear()} SSP School. All rights reserved.
-        </p>
+        <div className="footer__column">
+          <h2>Admissions</h2>
+          <Link to="/admission">How to Apply</Link>
+          <Link to="/admission">Fees &amp; Scholarships</Link>
+          <Link to="/contact">Visit Our Campus</Link>
+        </div>
+
+        <div className="footer__column">
+          <h2>Connect</h2>
+          <a href="mailto:info@ssppschool.edu">info@ssppschool.edu</a>
+          <a href="tel:+911123456789">+91 11 2345 6789</a>
+          <span>New Delhi, India</span>
+        </div>
       </div>
     </footer>
   );

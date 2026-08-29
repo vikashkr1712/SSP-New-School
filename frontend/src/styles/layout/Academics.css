@@ -1,0 +1,541 @@
+.academics-page {
+  background: var(--ssp-ivory);
+}
+
+.academics-hero {
+  position: relative;
+  display: grid;
+  min-height: 550px;
+  grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+  overflow: hidden;
+  background: #fff;
+}
+
+.academics-hero::before,
+.academics-hero::after {
+  position: absolute;
+  bottom: -93px;
+  left: -88px;
+  z-index: 2;
+  width: 190px;
+  height: 190px;
+  border: 1px solid var(--ssp-gold);
+  border-radius: 50%;
+  content: "";
+}
+
+.academics-hero::after {
+  bottom: -116px;
+  left: -61px;
+}
+
+.academics-hero__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 66px clamp(34px, 5.5vw, 82px);
+}
+
+.academics-hero h1 {
+  max-width: 620px;
+  margin: 27px 0 23px;
+  font-size: clamp(52px, 5.1vw, 73px);
+  letter-spacing: -0.025em;
+  line-height: 1.06;
+}
+
+.academics-hero__copy > p {
+  max-width: 520px;
+  margin-bottom: 43px;
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.academics-hero__visual {
+  min-height: 550px;
+  overflow: hidden;
+  border-bottom-right-radius: 135px;
+}
+
+.academics-hero__visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  object-fit: cover;
+}
+
+.academic-journey {
+  max-width: 1120px;
+  background: #fff;
+}
+
+.academic-journey .section-heading p {
+  max-width: 760px;
+}
+
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stage-card {
+  min-height: 215px;
+  padding: 27px 18px 22px;
+  border: 1px solid var(--ssp-line);
+  border-radius: 11px;
+  background: #fff;
+  text-align: center;
+}
+
+.stage-card.is-selected {
+  border: 2px solid var(--ssp-teal);
+}
+
+.stage-card svg,
+.principle svg {
+  fill: none;
+  stroke: var(--ssp-gold);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.stage-card.is-selected svg {
+  stroke: var(--ssp-teal);
+}
+
+.stage-card svg {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 13px;
+}
+
+.stage-card h3 {
+  margin-bottom: 6px;
+  font-size: 24px;
+}
+
+.stage-card span {
+  font-size: 13px;
+}
+
+.academics-approach {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: #fff;
+}
+
+.academics-approach__image {
+  min-height: 590px;
+}
+
+.academics-approach__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.academics-approach__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px clamp(40px, 6vw, 92px);
+}
+
+.academics-approach h2,
+.beyond-classroom h2,
+.academic-progress h2,
+.academic-final-cta h2 {
+  margin: 10px 0 21px;
+  font-size: clamp(38px, 4vw, 56px);
+  line-height: 1.08;
+}
+
+.academics-approach__copy > p {
+  max-width: 600px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px 24px;
+  margin-top: 24px;
+}
+
+.principle {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 12px;
+}
+
+.principle svg {
+  width: 56px;
+  height: 56px;
+  stroke: var(--ssp-teal);
+}
+
+.principle h3 {
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.principle p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.academic-subjects {
+  padding: var(--ssp-section) var(--ssp-gutter);
+  background: #f5f0e7;
+}
+
+.subject-grid {
+  display: grid;
+  width: min(100%, 1160px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.subject-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.subject-card > img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.subject-card > div {
+  min-height: 214px;
+  padding: 22px 24px;
+}
+
+.subject-card h3 {
+  margin-bottom: 9px;
+  font-size: 25px;
+}
+
+.subject-card p {
+  min-height: 82px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.subject-card span {
+  color: var(--ssp-teal);
+  font-size: 23px;
+}
+
+.learner-support {
+  padding: 41px var(--ssp-gutter) 48px;
+  color: #fff;
+  background: var(--ssp-navy-deep);
+  text-align: center;
+}
+
+.learner-support h2 {
+  margin-bottom: 29px;
+  color: #fff;
+  font-size: clamp(35px, 3.7vw, 50px);
+}
+
+.learner-support__grid {
+  display: grid;
+  width: min(100%, 1050px);
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+}
+
+.learner-support article {
+  padding: 0 35px;
+  border-right: 1px solid var(--ssp-gold);
+}
+
+.learner-support article:last-child {
+  border-right: 0;
+}
+
+.learner-support h3 {
+  margin-bottom: 10px;
+  color: var(--ssp-gold);
+  font-size: 24px;
+}
+
+.learner-support p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.beyond-classroom {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: 43% 57%;
+  align-items: center;
+  background: #fff;
+}
+
+.beyond-classroom__copy {
+  padding-right: 42px;
+}
+
+.beyond-classroom__copy p {
+  max-width: 500px;
+  margin-bottom: 26px;
+}
+
+.beyond-classroom__images {
+  position: relative;
+  min-height: 405px;
+}
+
+.beyond-classroom__images::after {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  width: 42%;
+  height: 46%;
+  border: 1px solid var(--ssp-gold);
+  border-radius: 13px;
+  content: "";
+}
+
+.beyond-classroom__main,
+.beyond-classroom__secondary {
+  position: absolute;
+  object-fit: cover;
+}
+
+.beyond-classroom__main {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 61%;
+  height: 88%;
+  border-radius: 13px;
+}
+
+.beyond-classroom__secondary {
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 47%;
+  height: 55%;
+  border: 7px solid #fff;
+  border-radius: 13px;
+}
+
+.academic-progress {
+  display: grid;
+  grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+  gap: clamp(42px, 7vw, 100px);
+  align-items: center;
+  padding: 67px max(var(--ssp-gutter), calc((100% - 1160px) / 2));
+  background: #f5f0e7;
+}
+
+.academic-progress h2 {
+  font-size: clamp(35px, 3.6vw, 49px);
+}
+
+.academic-progress__copy p {
+  max-width: 530px;
+  font-size: 14px;
+}
+
+.progress-panel {
+  padding: 28px 34px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--ssp-shadow);
+}
+
+.progress-panel h3 {
+  margin-bottom: 21px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.progress-row {
+  display: grid;
+  grid-template-columns: 94px 1fr 44px;
+  gap: 14px;
+  align-items: center;
+  margin: 17px 0;
+  color: var(--ssp-navy);
+  font-size: 13px;
+}
+
+.progress-row i {
+  display: block;
+  height: 4px;
+  background: #e4e4df;
+}
+
+.progress-row b {
+  display: block;
+  height: 100%;
+  background: var(--ssp-teal);
+}
+
+.progress-row strong {
+  font-size: 12px;
+}
+
+.academic-final-cta {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  background: #fff;
+}
+
+.academic-final-cta__image {
+  min-height: 345px;
+  overflow: hidden;
+  border-radius: 19px 0 0 0;
+}
+
+.academic-final-cta__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.academic-final-cta__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px clamp(38px, 7vw, 105px);
+}
+
+.academic-final-cta h2 {
+  max-width: 620px;
+}
+
+@media (max-width: 940px) {
+  .academics-hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .academics-hero__copy {
+    padding: 48px 28px;
+  }
+
+  .academics-hero h1 {
+    font-size: clamp(44px, 6vw, 58px);
+  }
+
+  .academics-approach__copy {
+    padding: 46px 30px;
+  }
+
+  .stage-grid,
+  .subject-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .subject-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 12px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .academics-hero,
+  .academics-approach,
+  .beyond-classroom,
+  .academic-progress,
+  .academic-final-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .academics-hero__copy {
+    min-height: 450px;
+    padding: 52px var(--ssp-gutter);
+  }
+
+  .academics-hero h1 {
+    font-size: clamp(42px, 13vw, 60px);
+  }
+
+  .academics-hero__copy > p {
+    font-size: 16px;
+  }
+
+  .academics-hero__visual,
+  .academics-hero__visual img {
+    min-height: 410px;
+  }
+
+  .stage-grid,
+  .subject-grid,
+  .principle-grid,
+  .learner-support__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subject-card:last-child {
+    grid-column: auto;
+    width: auto;
+  }
+
+  .subject-card p {
+    min-height: 0;
+  }
+
+  .academics-approach__image {
+    min-height: 410px;
+  }
+
+  .academics-approach__copy {
+    padding: 52px var(--ssp-gutter);
+  }
+
+  .learner-support article {
+    padding: 25px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--ssp-gold);
+  }
+
+  .learner-support article:last-child {
+    border-bottom: 0;
+  }
+
+  .beyond-classroom__copy {
+    padding: 0 0 42px;
+  }
+
+  .beyond-classroom__images {
+    min-height: 360px;
+  }
+
+  .academic-progress {
+    padding-block: 56px;
+  }
+
+  .academic-final-cta__image {
+    min-height: 330px;
+  }
+}
+
+@media (max-width: 430px) {
+  .progress-panel {
+    padding: 24px 18px;
+  }
+
+  .progress-row {
+    grid-template-columns: 76px 1fr 36px;
+    gap: 9px;
+  }
+}

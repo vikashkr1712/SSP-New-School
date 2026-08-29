@@ -1,35 +1,44 @@
 :root {
-  --color-primary: #0b66c2;
-  --color-primary-dark: #074a86;
-  --color-primary-soft: #eaf4ff;
-  --color-accent: #ffbf45;
-  --color-accent-soft: rgba(255, 191, 69, 0.16);
-  --color-surface: #ffffff;
-  --color-surface-soft: rgba(255, 255, 255, 0.96);
-  --color-page: #f6f9ff;
-  --color-page-alt: #eef6ff;
-  --color-text: #071835;
-  --color-text-muted: #5a6e8a;
-  --color-border: rgba(11, 86, 194, 0.08);
-  --color-border-strong: rgba(11, 86, 194, 0.16);
-  --shadow-sm: 0 8px 20px rgba(9, 28, 56, 0.06);
-  --shadow-md: 0 16px 36px rgba(9, 28, 56, 0.09);
-  --shadow-lg: 0 24px 56px rgba(11, 86, 194, 0.14);
-  --btn-shadow: 0 12px 30px rgba(11,86,194,0.10);
-  --glass-bg: rgba(255,255,255,0.6);
-  --gradient-hero: linear-gradient(180deg, rgba(11,102,194,0.06) 0%, rgba(255,255,255,0.02) 100%);
-  --radius-sm: 0.75rem;
-  --radius-md: 1rem;
-  --radius-lg: 1.5rem;
-  --radius-xl: 1.75rem;
+  --ssp-navy: #102a43;
+  --ssp-navy-deep: #082d51;
+  --ssp-ivory: #f8f5ee;
+  --ssp-gold: #d6a64b;
+  --ssp-teal: #2f7c78;
+  --ssp-white: #ffffff;
+  --ssp-text: #43464b;
+  --ssp-line: #e5ddd0;
+  --ssp-shadow: 0 12px 30px rgba(16, 42, 67, 0.09);
+  --ssp-radius: 16px;
+  --ssp-container: 1200px;
+  --ssp-gutter: clamp(22px, 4.5vw, 64px);
+  --ssp-section: clamp(64px, 7vw, 94px);
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: "Segoe UI", Arial, sans-serif;
+
+  /* Compatibility aliases used by existing non-target pages. */
+  --color-primary: var(--ssp-navy);
+  --color-primary-dark: var(--ssp-navy-deep);
+  --color-primary-soft: #edf3f5;
+  --color-accent: var(--ssp-gold);
+  --color-accent-soft: #f7edda;
+  --color-surface: var(--ssp-white);
+  --color-page: var(--ssp-ivory);
+  --color-page-alt: #ffffff;
+  --color-text: var(--ssp-navy);
+  --color-text-muted: var(--ssp-text);
+  --color-border: var(--ssp-line);
+  --color-border-strong: var(--ssp-gold);
+  --shadow-sm: var(--ssp-shadow);
+  --shadow-md: var(--ssp-shadow);
+  --shadow-lg: var(--ssp-shadow);
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: var(--ssp-radius);
+  --radius-xl: 24px;
   --radius-pill: 999px;
-  --container-width: 1200px;
-  --content-gutter: clamp(1rem, 3vw, 3rem);
-  --section-padding: clamp(3rem, 6vw, 4.75rem);
-  --section-gap: clamp(1.25rem, 2vw, 1.75rem);
-  --transition-fast: 180ms ease;
-  --transition-base: 240ms ease;
-  --motion-ease: cubic-bezier(.2,.9,.2,1);
+  --container-width: var(--ssp-container);
+  --content-gutter: var(--ssp-gutter);
+  --section-padding: var(--ssp-section);
 }
 
 * {
@@ -37,61 +46,52 @@
 }
 
 html {
-  scroll-behavior: smooth;
   width: 100%;
   min-height: 100%;
-  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: "Aptos", "Segoe UI", "Inter", sans-serif;
-  font-size: clamp(0.98rem, 0.94rem + 0.25vw, 1.02rem);
-  line-height: 1.6;
-  color: var(--color-text);
-  background: var(--color-page);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   width: 100%;
   min-height: 100%;
+  margin: 0;
   overflow-x: hidden;
+  color: var(--ssp-text);
+  background: var(--ssp-ivory);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
-  width: 100%;
   min-height: 100%;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
   display: block;
+  max-width: 100%;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
-p,
-li,
-blockquote,
-figcaption {
-  overflow-wrap: anywhere;
+p {
+  margin-top: 0;
 }
 
 h1,
 h2,
-h3,
-.navbar__school-name,
-.footer__school-name {
-  text-wrap: balance;
+h3 {
+  color: var(--ssp-navy);
+  font-family: var(--font-heading);
+  font-weight: 400;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 button,
@@ -101,124 +101,158 @@ select {
   font: inherit;
 }
 
-button,
-a {
-  touch-action: manipulation;
-}
-
 :focus-visible {
-  outline: 3px solid rgba(255, 210, 63, 0.8);
-  outline-offset: 2px;
+  outline: 3px solid rgba(214, 166, 75, 0.7);
+  outline-offset: 3px;
 }
 
-.section-shell {
-  width: 100%;
-  max-width: var(--container-width);
+.school-section {
+  width: min(100%, var(--ssp-container));
+  margin-inline: auto;
+  padding: var(--ssp-section) var(--ssp-gutter);
+}
+
+.page-eyebrow {
+  display: inline-block;
+  color: var(--ssp-teal);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  line-height: 1.2;
+}
+
+.page-eyebrow--gold {
+  color: var(--ssp-gold);
+}
+
+.section-heading {
+  margin-bottom: 34px;
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 8px 0 10px;
+  font-size: clamp(34px, 3.7vw, 53px);
+  line-height: 1.08;
+}
+
+.section-heading p {
+  max-width: 660px;
   margin: 0 auto;
-  padding-inline: var(--content-gutter);
-  padding-block: var(--section-padding);
 }
 
-::selection {
-  background: rgba(255, 210, 63, 0.45);
-  color: var(--color-text);
+.statement-strip {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 28px);
+  padding: 12px var(--ssp-gutter);
+  color: var(--ssp-navy);
+  background: var(--ssp-gold);
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.25;
+  text-align: center;
 }
 
-@media (max-width: 390px) {
-  :root {
-    --content-gutter: 0.85rem;
-    --section-padding: clamp(2.2rem, 7vw, 3rem);
-  }
+.statement-strip i {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-style: normal;
 }
 
-@media (max-width: 480px) {
-  :root {
-    --section-padding: clamp(2.25rem, 7vw, 3rem);
-  }
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-@media (min-width: 412px) {
-  :root {
-    --content-gutter: clamp(0.9rem, 2.8vw, 1.4rem);
-  }
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--ssp-navy);
+  font-size: 14px;
+  font-weight: 650;
 }
 
-@media (min-width: 540px) {
-  :root {
-    --content-gutter: clamp(1rem, 3vw, 1.5rem);
-    --section-padding: clamp(2.4rem, 6.5vw, 3.35rem);
-  }
+.breadcrumb a {
+  color: var(--ssp-teal);
+}
+
+.school-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1px solid var(--ssp-navy);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.school-button--navy {
+  color: #fff;
+  background: var(--ssp-navy-deep);
+}
+
+.school-button--outline {
+  color: var(--ssp-teal);
+  border-color: var(--ssp-teal);
+  background: transparent;
+}
+
+.gold-corner-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-corner-lines::before,
+.gold-corner-lines::after {
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  border: 1px solid var(--ssp-gold);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.gold-corner-lines::before {
+  right: -94px;
+  bottom: -88px;
+}
+
+.gold-corner-lines::after {
+  right: -111px;
+  bottom: -69px;
 }
 
 @media (max-width: 640px) {
   :root {
-    --section-padding: clamp(2.35rem, 7.5vw, 3.35rem);
+    --ssp-gutter: 20px;
+    --ssp-section: 56px;
   }
-}
 
-@media (min-width: 768px) {
-  :root {
-    --content-gutter: clamp(1.25rem, 2.5vw, 2.5rem);
+  body {
+    font-size: 15px;
   }
-}
 
-@media (min-width: 820px) {
-  :root {
-    --content-gutter: clamp(1.3rem, 2.2vw, 2.8rem);
-    --section-padding: clamp(3rem, 5vw, 4.4rem);
+  .statement-strip {
+    min-height: 54px;
+    gap: 8px;
+    font-size: 18px;
   }
-}
 
-@media (min-width: 912px) {
-  :root {
-    --content-gutter: clamp(1.4rem, 2.2vw, 2.9rem);
-    --section-padding: clamp(3rem, 4.8vw, 4.6rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --content-gutter: clamp(1.5rem, 2.5vw, 3rem);
-  }
-}
-
-@media (min-width: 1280px) {
-  :root {
-    --container-width: 1220px;
-  }
-}
-
-@media (min-width: 1366px) {
-  :root {
-    --container-width: 1240px;
-    --content-gutter: clamp(1.5rem, 2vw, 3rem);
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    --container-width: 1260px;
-    --content-gutter: clamp(1.5rem, 1.8vw, 3rem);
-  }
-}
-
-@media (min-width: 1536px) {
-  :root {
-    --container-width: 1240px;
-    --section-padding: clamp(3.25rem, 4vw, 5rem);
-  }
-}
-
-@media (min-width: 1728px) {
-  :root {
-    --container-width: 1280px;
-    --section-padding: clamp(3.5rem, 3.8vw, 5.2rem);
-  }
-}
-
-@media (min-width: 1920px) {
-  :root {
-    --container-width: 1320px;
-    --section-padding: clamp(3.75rem, 3.5vw, 5.5rem);
+  .button-row,
+  .school-button {
+    width: 100%;
   }
 }

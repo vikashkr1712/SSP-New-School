@@ -1,0 +1,105 @@
+.campus-page { background: var(--ssp-ivory); }
+
+.campus-hero { position: relative; min-height: 600px; overflow: hidden; background: #fff; }
+.campus-hero__photos { display: grid; min-height: 600px; grid-template-columns: 50% 28% 22%; }
+.campus-hero__photos img { width: 100%; height: 600px; object-fit: cover; }
+.campus-hero__sport { object-position: 47% center; }
+.campus-hero__club { object-position: center; }
+.campus-hero__art { object-position: 63% center; }
+.campus-hero__copy {
+  position: absolute; bottom: 0; left: clamp(36px, 6vw, 88px); z-index: 2;
+  width: min(430px, calc(100% - 72px)); min-height: 335px; padding: 54px 48px 42px;
+  border-radius: 70px 70px 0 0; background: #fff;
+}
+.campus-hero__copy::before,.campus-hero__copy::after { position:absolute; right:-73px; bottom:-95px; width:170px; height:170px; border:1px solid var(--ssp-gold); border-radius:50%; content:""; }
+.campus-hero__copy::after { right:-100px; bottom:-75px; }
+.campus-hero h1 { margin: 13px 0 17px; font-size: clamp(48px, 5vw, 69px); line-height: 1.03; }
+.campus-hero__copy p { margin-bottom: 23px; font-size: 16px; line-height: 1.65; }
+
+.passion-section { padding: 58px var(--ssp-gutter) 65px; background:#fff; }
+.passion-section .section-heading { margin-bottom: 28px; }
+.passion-grid { display:grid; width:min(100%,1000px); grid-template-columns:repeat(4,1fr); margin:0 auto; }
+.passion-grid a { text-align:center; color:var(--ssp-teal); font-size:14px; font-weight:700; }
+.passion-grid svg { display:block; width:65px; height:65px; margin:0 auto 8px; fill:none; stroke:var(--ssp-teal); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.passion-grid a:nth-child(2) svg,.passion-grid a:nth-child(4) svg { stroke:var(--ssp-gold); }
+
+.explore-grow { display:grid; grid-template-columns:58% 42%; padding:60px max(var(--ssp-gutter),calc((100% - 1210px)/2)); background:#f5f0e7; }
+.explore-grow__left > img { width:100%; height:350px; border-radius:14px; object-fit:cover; }
+.explore-grow__left > div { padding:23px 8px 0; }
+.explore-grow h2,.wellbeing-section h2,.campus-spaces h2,.campus-final-cta h2 { margin:9px 0 15px; font-size:clamp(37px,3.9vw,54px); line-height:1.08; }
+.explore-grow__left p { margin-bottom:12px; font-size:14px; }
+.explore-grow__right { display:grid; grid-template-rows:1fr 1fr; gap:24px; padding-left:24px; }
+.explore-grow__right img { width:100%; height:100%; min-height:255px; border-radius:14px; object-fit:cover; }
+
+.weekly-section { padding:53px var(--ssp-gutter) 62px; background:#fff; }
+.weekly-grid { display:grid; width:min(100%,1120px); grid-template-columns:repeat(3,1fr); gap:28px; margin:0 auto; }
+.weekly-grid article { overflow:hidden; border:1px solid var(--ssp-line); border-radius:12px; background:#fff; box-shadow:var(--ssp-shadow); }
+.weekly-grid img { width:100%; height:205px; object-fit:cover; }
+.weekly-grid article > div { min-height:150px; padding:17px 20px; }
+.weekly-grid h3 { margin-bottom:5px; font-size:26px; }
+.weekly-grid p { margin-bottom:8px; font-size:12px; line-height:1.5; }
+.weekly-grid span { color:var(--ssp-teal); font-size:11px; font-weight:700; }
+
+.wellbeing-section { display:grid; grid-template-columns:48% 52%; color:#fff; background:var(--ssp-navy-deep); }
+.wellbeing-section__copy { display:flex; flex-direction:column; justify-content:center; padding:50px clamp(38px,6vw,82px) 95px; }
+.wellbeing-section h2 { color:#fff; }
+.wellbeing-section__copy p { max-width:540px; margin-bottom:13px; font-size:14px; }
+.wellbeing-button { width:fit-content; margin-top:18px; color:#fff; border-color:var(--ssp-teal); background:transparent; }
+.wellbeing-section__image { min-height:430px; overflow:hidden; border-radius:90px 0 0 0; }
+.wellbeing-section__image img { width:100%; height:100%; object-fit:cover; }
+.wellbeing-services { display:grid; grid-column:1/-1; grid-template-columns:repeat(3,1fr); padding:17px max(var(--ssp-gutter),calc((100% - 1100px)/2)) 22px; color:var(--ssp-gold); }
+.wellbeing-services span { padding:0 34px; border-right:1px solid var(--ssp-gold); text-align:center; font-size:14px; font-weight:650; }
+.wellbeing-services span:last-child { border-right:0; }
+
+.events-section { padding:38px max(var(--ssp-gutter),calc((100% - 1160px)/2)) 45px; background:#fff; }
+.events-section__heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:7px; }
+.events-section__heading h2 { margin:0; font-size:35px; }
+.events-section__heading a { color:var(--ssp-teal); font-size:13px; font-weight:700; }
+.event-list article { display:grid; grid-template-columns:82px 1fr 250px; align-items:center; min-height:72px; border-bottom:1px solid var(--ssp-line); }
+.event-list time strong,.event-list time span,.event-list p strong,.event-list p span { display:block; }
+.event-list time strong { color:var(--ssp-navy); font-family:var(--font-heading); font-size:28px; font-weight:400; line-height:1; }
+.event-list time span { font-size:11px; }
+.event-list h3 { margin:0; font-size:23px; }
+.event-list p { margin:0; font-size:11px; }
+.event-list p strong { font-weight:500; }
+
+.campus-spaces { display:grid; grid-template-columns:50% 50%; padding:45px max(var(--ssp-gutter),calc((100% - 1210px)/2)); background:#f5f0e7; }
+.campus-spaces__image { min-height:360px; overflow:hidden; border-radius:14px; }
+.campus-spaces__image img { width:100%; height:100%; object-fit:cover; }
+.campus-spaces__copy { display:flex; flex-direction:column; justify-content:center; padding:30px 0 30px 55px; }
+.campus-spaces__copy p { margin-bottom:18px; }
+.space-list { display:grid; grid-template-columns:repeat(2,1fr); gap:19px 28px; margin-bottom:27px; color:var(--ssp-text); font-size:13px; }
+.space-list span { color:var(--ssp-teal); }
+.campus-spaces .school-button { width:fit-content; }
+
+.student-story { display:grid; grid-template-columns:50% 50%; padding:45px max(var(--ssp-gutter),calc((100% - 1210px)/2)); background:#fff; }
+.student-story__image { min-height:300px; overflow:hidden; border-radius:14px; }
+.student-story__image img { width:100%; height:100%; object-fit:cover; object-position:center 25%; }
+.student-story blockquote { margin:0; padding:30px 0 30px 54px; border-left:1px solid var(--ssp-gold); align-self:center; }
+.student-story blockquote p { margin-bottom:17px; color:var(--ssp-navy); font-family:var(--font-heading); font-size:clamp(30px,3.3vw,46px); line-height:1.15; }
+.student-story blockquote strong { display:block; margin-bottom:17px; color:var(--ssp-text); font-size:13px; }
+.student-story blockquote a { color:var(--ssp-teal); font-size:13px; font-weight:700; }
+
+.campus-final-cta { display:grid; grid-template-columns:42% 58%; background:#f5f0e7; }
+.campus-final-cta__copy { display:flex; flex-direction:column; justify-content:center; padding:44px clamp(36px,6vw,80px); }
+.campus-final-cta__image { min-height:325px; overflow:hidden; border-radius:100px 0 0 0; }
+.campus-final-cta__image img { width:100%; height:100%; object-fit:cover; }
+
+@media(max-width:940px){
+  .campus-hero__photos{grid-template-columns:55% 45%;}.campus-hero__art{display:none;}
+  .explore-grow{grid-template-columns:1fr;}.explore-grow__right{grid-template-columns:1fr 1fr;grid-template-rows:1fr;padding:26px 0 0;}
+  .weekly-grid{grid-template-columns:repeat(2,1fr);}.weekly-grid article:last-child{grid-column:1/-1;width:calc(50% - 14px);justify-self:center;}
+}
+
+@media(max-width:700px){
+  .campus-hero{min-height:760px;}.campus-hero__photos{grid-template-columns:1fr 1fr;}.campus-hero__photos img{height:410px;}.campus-hero__copy{left:20px;bottom:0;width:calc(100% - 40px);min-height:390px;padding:48px 28px 38px;}
+  .passion-grid,.weekly-grid,.wellbeing-section,.campus-spaces,.student-story,.campus-final-cta{grid-template-columns:1fr;}
+  .passion-grid{gap:28px;}.explore-grow__right{grid-template-columns:1fr;}.explore-grow__right img{min-height:310px;}
+  .weekly-grid article:last-child{grid-column:auto;width:auto;}.wellbeing-section__copy{padding:50px var(--ssp-gutter);}.wellbeing-section__image{min-height:370px;border-radius:70px 0 0 0;}
+  .wellbeing-services{grid-template-columns:1fr;}.wellbeing-services span{padding:15px 0;border-right:0;border-bottom:1px solid var(--ssp-gold);}.wellbeing-services span:last-child{border-bottom:0;}
+  .events-section__heading{align-items:flex-start;gap:16px;}.event-list article{grid-template-columns:65px 1fr;min-height:100px;}.event-list p{grid-column:2;margin-top:-25px;}
+  .campus-spaces__copy{padding:43px 0 0;}.student-story blockquote{padding:38px 0 10px;border-left:0;border-top:1px solid var(--ssp-gold);}.student-story__image{min-height:340px;}
+  .campus-final-cta__image{min-height:330px;border-radius:70px 0 0 0;}
+}
+
+@media(max-width:430px){.space-list{grid-template-columns:1fr;}.events-section__heading{display:block}.events-section__heading a{display:block;margin-top:9px}.campus-hero__copy{left:12px;width:calc(100% - 24px)}}

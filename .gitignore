@@ -3,15 +3,25 @@ frontend/node_modules/
 backend/node_modules/
 dist/
 frontend/dist/
+coverage/
 .env
 .env.local
+.env.*
+!.env.example
 .DS_Store
+Thumbs.db
 .vercel
 .idea/
 .vscode/
 uploads/
 backend/logs/
 __pycache__/
+
+# Local design-source exports and browser QA artifacts
+frontend/src/assets/images/ChatGPT Image*.png
+.chrome-*/
+*-visual.png
+*-visual.jpg
 # Environment files
 .env
 backend/.env
