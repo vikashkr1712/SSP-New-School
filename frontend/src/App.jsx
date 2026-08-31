@@ -30,6 +30,10 @@ function usePageInteractions() {
       activeAnimations.push(animation);
     });
 
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      return () => activeAnimations.forEach((animation) => animation.cancel());
+    }
+
     const sections = Array.from(document.querySelectorAll("main > section:not(:first-child)"));
     if (!("IntersectionObserver" in window)) return () => activeAnimations.forEach((animation) => animation.cancel());
 

@@ -44,14 +44,14 @@
   line-height: 1.7;
 }
 .campus-hero__visual {
-  min-height: 570px;
-  margin-right: var(--ssp-gutter);
+  min-height: 534px;
+  margin: 18px var(--ssp-gutter) 18px 0;
   overflow: hidden;
   border-bottom-left-radius: 120px;
 }
 .campus-hero__visual img {
   height: 100%;
-  min-height: 570px;
+  min-height: 534px;
   object-fit: cover;
   object-position: 52% center;
 }

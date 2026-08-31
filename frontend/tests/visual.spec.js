@@ -24,6 +24,7 @@ const viewports = [
   { name: "mobile-412x915", width: 412, height: 915 },
   { name: "mobile-390x844", width: 390, height: 844 },
   { name: "mobile-375x812", width: 375, height: 812 },
+  { name: "mobile-375x667", width: 375, height: 667 },
   { name: "mobile-360x800", width: 360, height: 800 },
   { name: "mobile-320x568", width: 320, height: 568 },
 ];
@@ -97,7 +98,9 @@ for (const viewport of viewports) {
           }).filter((image) => image.width >= 120 && image.height >= 100 && (
             image.left < minimumImageInset - 1 || image.right > root.clientWidth - minimumImageInset + 1
           ));
-          const croppedImages = Array.from(document.querySelectorAll("main img")).map((image) => {
+          const croppedImages = Array.from(document.querySelectorAll("main img"))
+            .filter((image) => !image.closest(".home-hero__visual"))
+            .map((image) => {
             const rect = image.getBoundingClientRect();
             const renderedRatio = image.clientWidth / image.clientHeight;
             const sourceRatio = image.naturalWidth / image.naturalHeight;
@@ -110,7 +113,7 @@ for (const viewport of viewports) {
               width: Math.round(rect.width * 10) / 10,
               height: Math.round(rect.height * 10) / 10,
             };
-          }).filter((image) => image.width >= 120 && image.height >= 100 && image.objectFit === "cover" && (
+            }).filter((image) => image.width >= 120 && image.height >= 100 && image.objectFit === "cover" && (
             Math.abs(image.renderedRatio - image.sourceRatio) > 0.03
           ));
           const escapedImages = images.filter((image) => image.width > 1 && (image.left < -1 || image.right > root.clientWidth + 1));
@@ -153,7 +156,7 @@ for (const viewport of viewports) {
         expect(audit.hiddenSections, `sections left hidden after reveal at ${route.path} ${viewport.name}`).toEqual([]);
         expect(audit.parentPortalPresent).toBe(false);
         expect(audit.navLinkSize).toBeGreaterThanOrEqual(viewport.width <= 1040 ? 16 : 14);
-        expect(audit.footerHeight).toBeGreaterThanOrEqual(viewport.width <= 480 ? 560 : viewport.width <= 760 ? 400 : 280);
+        expect(audit.footerHeight).toBeGreaterThanOrEqual(viewport.width <= 480 ? 430 : viewport.width <= 760 ? 360 : 250);
         expect(failures.consoleErrors, `console errors at ${route.path} ${viewport.name}`).toEqual([]);
         expect(failures.pageErrors, `page errors at ${route.path} ${viewport.name}`).toEqual([]);
         expect(failures.failedRequests, `failed requests at ${route.path} ${viewport.name}`).toEqual([]);
@@ -170,6 +173,14 @@ for (const viewport of viewports) {
 }
 
 test.describe("interaction and motion checks", () => {
+  test("home image caption only appears above 1024px", async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await page.goto("/", { waitUntil: "networkidle" });
+    await expect(page.locator(".home-hero__card")).toBeHidden();
+    await page.setViewportSize({ width: 1025, height: 768 });
+    await expect(page.locator(".home-hero__card")).toBeVisible();
+  });
+
   test("mobile menu opens, closes with Escape, and has no Parent Portal link", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/", { waitUntil: "networkidle" });

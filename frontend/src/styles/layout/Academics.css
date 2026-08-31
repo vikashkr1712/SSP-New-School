@@ -52,8 +52,8 @@
 }
 
 .academics-hero__visual {
-  min-height: 550px;
-  margin-right: var(--ssp-gutter);
+  min-height: 514px;
+  margin: 18px var(--ssp-gutter) 18px 0;
   overflow: hidden;
   border-bottom-right-radius: 135px;
 }
@@ -61,7 +61,7 @@
 .academics-hero__visual img {
   width: 100%;
   height: 100%;
-  min-height: 550px;
+  min-height: 514px;
   object-fit: cover;
 }
 

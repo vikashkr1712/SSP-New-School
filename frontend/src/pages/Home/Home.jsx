@@ -61,7 +61,10 @@ function Home() {
         </div>
       </section>
 
-      <div className="statement-strip">Nurturing Knowledge <i>•</i> Character <i>•</i> Creativity</div>
+      <div className="statement-strip home-statement-strip">
+        <span><span className="home-statement-prefix">Nurturing </span>Knowledge</span>
+        <i>•</i><span>Character</span><i>•</i><span>Creativity</span>
+      </div>
 
       <section className="school-section home-experience">
         <header className="section-heading section-heading--center">
