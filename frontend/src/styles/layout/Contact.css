@@ -6,7 +6,7 @@
 .contact-hero__copy .breadcrumb { margin-bottom:42px; }
 .contact-hero h1 { max-width:570px; margin:23px 0 23px; font-size:clamp(52px,5vw,72px); line-height:1.06; letter-spacing:-.025em; }
 .contact-hero__copy > p { max-width:480px; font-size:17px; line-height:1.75; }
-.contact-hero__visual { min-height:570px; overflow:hidden; border-bottom-right-radius:140px; }
+.contact-hero__visual { min-height:570px; margin-right:var(--ssp-gutter); overflow:hidden; border-bottom-right-radius:140px; }
 .contact-hero__visual img { width:100%; height:100%; min-height:570px; object-fit:cover; }
 
 .contact-options { padding:46px var(--ssp-gutter) 58px; background:#fff; text-align:center; }
@@ -44,7 +44,7 @@
 .campus-details .school-button { width:fit-content; margin:9px 0 30px; }
 .campus-details > img { width:100%; height:310px; border-radius:13px; object-fit:cover; }
 
-.contact-map-section { padding:55px max(10px,calc((100% - 1380px)/2)) 20px; background:#fff; }
+.contact-map-section { padding:55px max(var(--ssp-gutter),calc((100% - 1380px)/2)) 20px; background:#fff; }
 .stylized-map { position:relative; width:100%; height:410px; overflow:hidden; border-radius:18px; background:#e9e5dc; }
 .stylized-map::before { position:absolute; inset:22px; border:2px solid rgba(255,255,255,.75); border-radius:13px; content:""; }
 .map-road { position:absolute; z-index:1; display:block; height:19px; border:2px solid #fff; background:#d6d2ca; box-shadow:0 0 0 1px #c8c2b8; }
@@ -106,11 +106,14 @@
   .visit-band{grid-template-columns:1fr}.contact-final-cta{grid-template-columns:1fr 1fr}
 }
 
-@media(max-width:700px){
-  .contact-hero,.contact-main,.contact-final-cta{grid-template-columns:1fr}.contact-hero__copy{min-height:470px;padding:48px var(--ssp-gutter)}.contact-hero h1{font-size:clamp(42px,13vw,60px)}.contact-hero__copy > p{font-size:16px}.contact-hero__visual,.contact-hero__visual img{min-height:410px}.contact-hero__visual{border-bottom-right-radius:85px}
+@media(max-width:768px){
+  .contact-hero,.contact-main,.contact-final-cta{grid-template-columns:1fr}.contact-hero__copy{min-height:470px;padding:48px var(--ssp-gutter)}.contact-hero h1{font-size:clamp(42px,13vw,60px)}.contact-hero__copy > p{font-size:16px}.contact-hero__visual,.contact-hero__visual img{min-height:410px}.contact-hero__visual{margin-inline:var(--ssp-gutter);border-bottom-right-radius:85px}
   .contact-options__grid{grid-template-columns:1fr}.contact-options__grid article:last-child{grid-column:auto;width:auto}.campus-details{padding:40px 0 0;border-top:1px solid var(--ssp-gold);border-left:0}
   .stylized-map{height:350px}.main-gate{right:14px;bottom:18px;width:200px}.knowledge-label{left:23%}.getting-section > div{grid-template-columns:1fr}.getting-section article{padding:23px 0;border-right:0;border-bottom:1px solid var(--ssp-gold)}.getting-section article:last-child{border-bottom:0}
   .visit-band{padding-block:38px}.contact-final-cta > div:first-child img{min-height:320px}.contact-final-cta > div:last-child{padding:38px 28px 50px}.contact-final-cta .school-button{width:100%}
+
+  .contact-page img,.contact-final-cta > div:first-child img{height:auto;min-height:0;aspect-ratio:auto;object-fit:contain}
+  .contact-hero__visual{height:auto;min-height:0}
 }
 
 @media(max-width:430px){

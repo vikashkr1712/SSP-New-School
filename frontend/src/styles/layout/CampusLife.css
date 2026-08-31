@@ -45,6 +45,7 @@
 }
 .campus-hero__visual {
   min-height: 570px;
+  margin-right: var(--ssp-gutter);
   overflow: hidden;
   border-bottom-left-radius: 120px;
 }
@@ -257,7 +258,7 @@
   .weekly-grid article:last-child { grid-column: 1 / -1; width: calc(50% - 14px); justify-self: center; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .campus-hero,
   .wellbeing-section,
   .campus-spaces,
@@ -267,7 +268,7 @@
   .campus-hero h1 { font-size: clamp(42px, 12vw, 58px); }
   .campus-hero__visual,
   .campus-hero__visual img { min-height: 420px; }
-  .campus-hero__visual { border-bottom-left-radius: 80px; }
+  .campus-hero__visual { margin-inline: var(--ssp-gutter); border-bottom-left-radius: 80px; }
   .campus-hero__visual img { object-position: 57% center; }
   .passion-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .explore-grow__right { grid-template-columns: 1fr; }
@@ -289,6 +290,22 @@
   .student-story blockquote { padding: 40px 0 10px; border-top: 1px solid var(--ssp-gold); border-left: 0; }
   .campus-final-cta { width: calc(100% - (2 * var(--ssp-gutter))); }
   .campus-final-cta__image { min-height: 340px; border-radius: 18px 18px 70px; }
+
+  .campus-page img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .campus-hero__visual,
+  .wellbeing-section__image,
+  .campus-spaces__image,
+  .student-story__image,
+  .campus-final-cta__image {
+    height: auto;
+    min-height: 0;
+  }
 }
 
 @media (max-width: 430px) {

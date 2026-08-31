@@ -67,6 +67,7 @@
 
 .about-hero__visual {
   min-height: 550px;
+  margin-right: var(--ssp-gutter);
   overflow: hidden;
   border-top-left-radius: 106px;
 }
@@ -437,7 +438,7 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .about-hero,
   .about-story,
   .about-principal,
@@ -465,6 +466,7 @@
   }
 
   .about-hero__visual {
+    margin-inline: var(--ssp-gutter);
     border-top-left-radius: 78px;
   }
 
@@ -532,5 +534,20 @@
     border-top: 0;
     border-left: 1px solid var(--ssp-line);
     border-radius: 0 0 18px 18px;
+  }
+
+  .about-page img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .about-hero__visual,
+  .about-story__image,
+  .about-principal__image,
+  .about-final-cta__image {
+    height: auto;
+    min-height: 0;
   }
 }

@@ -395,7 +395,7 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .home-hero,
   .home-story,
   .home-cta {
@@ -479,6 +479,20 @@
     border-top: 0;
     border-left: 1px solid var(--ssp-line);
     border-radius: 0 0 18px 18px;
+  }
+
+  .home-page img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .home-hero__visual,
+  .home-story__image,
+  .home-cta__image {
+    height: auto;
+    min-height: 0;
   }
 }
 
